@@ -1,0 +1,1 @@
+FLASK_APP=fortune500/app.py flask run

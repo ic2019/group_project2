@@ -1,0 +1,1 @@
+web: gunicorn fortune500.app:app
