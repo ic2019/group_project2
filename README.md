@@ -1,8 +1,8 @@
 # group_project2
-### Data Visualization project.
+## Data Visualization project.
 
-**Fortune 500 Financial Analysis
-**Team
+### Fortune 500 Financial Analysis
+#### Team
 -	Cletus
 -	Indu
 -	Mythili
