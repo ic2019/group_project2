@@ -2,31 +2,35 @@
 ## Data Visualization project.
 
 ### Fortune 500 Financial Analysis
-**Team
+**Team**
  -	Cletus
  -	Indu
  -	Mythili
  -	Satheesh
  -      Jake
 
-**Datasets
+**Datasets**
+
 [Kaggle](https://www.kaggle.com/Eruditepanda/fortune-1000-2018)
 [Quandl](https://www.quandl.com/)
 [DataPub](https://datahub.io/core/s-and-p-500-companies)
 
 An investor with 1M$ would like to know which company he should invest in getting the maximum return. In this project, we would analyze the financial data of Fortune 500 companies to assist the investor in making the correct choice by doing following analysis.
+
   - Correlation between Revenue Vs Profit
   - Findinging the profit margin ( Revenue/ Profit) per company
   - Finding profit margin per Secor/Industry
   - High worker productivity ( Revenue per employee)
 
-**Objective
+**Objective**
+
  1.	Are companies making bigger revenue makes bigger profits
  2.	Sector Analysis (top 500 companies)
  3.	Stocks Analysis (top 5 companies)
  4.	US Map to plot revenue/profit analysis
 
-**Coding Notes
+**Coding Notes**
+
  1.	Are companies making bigger revenue makes bigger profits
     a.	Identify top 10 Companies based on the ranking of the dataset and plot a bar chart
  2.	Sector Analysis (top 500 companies)
