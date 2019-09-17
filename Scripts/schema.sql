@@ -27,6 +27,36 @@ create table fortune500 (
 	"Mkt_Value_as_of_3/29/18" numeric,
 	"Symbol" char(10)
 	);
+
+----------Drop table if already exists----
+drop table sector_revenues;
+drop table sector_profits;
+drop table industry_revenues;
+drop table industry_profits;
+
+------Creating table for aggregate revenue values sector wise----
+create table sector_revenues (
+	"Sector" varchar not null,
+	"Revenues" numeric not null
+);
+
+----------Creating table for aggregate profit values sector wise----
+create table sector_profits (
+	"Sector" varchar not null,
+	"Profits" numeric not null
+);
+
+------Creating table for aggregate revenue values industry wise----
+create table industry_revenues (
+	"Industry" varchar not null,
+	"Revenues" numeric not null
+);
+
+----------Creating table for aggregate profit values industry wise----
+create table industry_profits (
+	"Industry" varchar not null,
+	"Profits" numeric not null
+);
 	
 	
 
