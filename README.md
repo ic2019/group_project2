@@ -4,10 +4,10 @@
 ### Fortune 500 Financial Analysis
 **Team**
  -	Cletus
+ - Jake
  -	Indu
  -	Mythili
  -	Satheesh
- -      Jake
 
 **Datasets**
 
