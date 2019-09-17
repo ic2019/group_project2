@@ -28,35 +28,20 @@ create table fortune500 (
 	"Symbol" char(10)
 	);
 
-----------Drop table if already exists----
-drop table sector_revenues;
-drop table sector_profits;
-drop table industry_revenues;
-drop table industry_profits;
+----------------Dropping sector_industry table if already exists----------
+drop table sector_industry;
 
-------Creating table for aggregate revenue values sector wise----
-create table sector_revenues (
-	"Sector" varchar not null,
-	"Revenues" numeric not null
+-------------Creating sector_industry table--------------
+create table sector_industry (
+		"Sector" varchar not null,
+		"Industry" varchar not null,
+		"Revenues" numeric not null,
+		"Profits" numeric not null
 );
 
-----------Creating table for aggregate profit values sector wise----
-create table sector_profits (
-	"Sector" varchar not null,
-	"Profits" numeric not null
-);
 
-------Creating table for aggregate revenue values industry wise----
-create table industry_revenues (
-	"Industry" varchar not null,
-	"Revenues" numeric not null
-);
 
-----------Creating table for aggregate profit values industry wise----
-create table industry_profits (
-	"Industry" varchar not null,
-	"Profits" numeric not null
-);
-	
+
+
 	
 
