@@ -18,8 +18,8 @@
 An investor with 1M$ would like to know, in which company he should invest for getting the maximum returns. In this project, we would analyze the financial data of Fortune 500 companies to assist the investor in making the correct choice by doing following analysis.
 
   - Correlation between Revenue Vs Profit
-  - Findinging the profit margin ( Revenue/ Profit) per company
-  - Finding profit margin per Secor/Industry
+  - Findinging the profit margin (  Profit / Revenu) per company
+  - Finding profit margin per Sector/Industry
   - High worker productivity ( Revenue per employee)
 
 **Objective**
