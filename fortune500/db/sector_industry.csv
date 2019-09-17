@@ -1,76 +1,76 @@
-,Sector,Industry,Revenues,Profits
-0,Wholesalers,Wholesalers: Health Care,509026.0,737250.0
-1,Wholesalers,Wholesalers: Food and Grocery,125908.0,189960.0
-2,Wholesalers,Wholesalers: Electronics and Office Equipment,111433.0,145410.0
-3,Wholesalers,Wholesalers: Diversified,82966.0,313320.0
-4,Transportation,"Trucking, Truck Leasing",14520.0,147690.0
-5,Transportation,Transportation and Logistics,37171.0,133440.0
-6,Transportation,Transportation Equipment,11152.0,69430.0
-7,Transportation,Railroads,43199.0,2158700.0
-8,Transportation,"Mail, Package, and Freight Delivery",126191.0,790700.0
-9,Transportation,Airlines,157306.0,1329600.0
-10,Telecommunications,Telecommunications,459715.0,9956830.0
-11,Technology,Semiconductors and Other Electronic Components,2071322.0,3009540.0
-12,Technology,"Scientific,Photographic and  Control Equipment",20918.0,222500.0
-13,Technology,Network and Other Communications Equipment,61396.0,1041450.0
-14,Technology,Internet Services and Retailing,185449.0,3251170.0
-15,Technology,Information Technology Services,139426.0,861220.0
-16,Technology,Entertainment,7017.0,27300.0
-17,Technology,"Computers, Office Equipment",430214.0,5628200.0
-18,Technology,Computer Software,145460.0,3236050.0
-19,Retailing,Specialty Retailers: Other,375249.0,2246660.0
-20,Retailing,Specialty Retailers: Apparel,99029.0,753790.0
-21,Retailing,Internet Services and Retailing,198330.0,585200.0
-22,Retailing,General Merchandisers,796288.0,1903830.0
-23,Retailing,"Automotive Retailing, Services",114747.0,305360.0
-24,Motor Vehicles &  Parts,Motor Vehicles and Parts,411868.0,1698320.0
-25,Media,"Publishing, Printing",15079.0,77240.0
-26,Media,Entertainment,173863.0,2181140.0
-27,Materials,"Packaging, Containers",90997.0,583450.0
-28,Materials,Miscellaneous,6990.0,710.0
-29,Materials,Metals,69495.0,335500.0
-30,Materials,Forest and Paper Products,7196.0,58200.0
-31,Materials,"Building Materials, Glass",13418.0,32780.0
-32,Industrials,Miscellaneous,31657.0,485800.0
-33,Industrials,Industrial Machinery,199832.0,1282960.0
-34,Industrials,"Electronics, Electrical Equip.",78214.0,332770.0
-35,Industrials,Construction and Farm Machinery,118363.0,509030.0
-36,Household Products,Household and Personal Products,137743.0,2212820.0
-37,Household Products,"Home Equipment, Furnishings",44624.0,547940.0
-38,"Hotels, Restaurants &  Leisure","Hotels, Casinos, Resorts",67817.0,901550.0
-39,"Hotels, Restaurants &  Leisure",Food Services,65399.0,1029910.0
-40,Health Care,Pharmaceuticals,321086.0,4480670.0
-41,Health Care,Medical Products and Equipment,97690.0,772390.0
-42,Health Care,Health Care: Pharmacy and Other Services,327420.0,1471660.0
-43,Health Care,Health Care: Medical Facilities,128091.0,759570.0
-44,Health Care,Health Care: Insurance and Managed Care,538417.0,2281370.0
-45,"Food, Beverages &  Tobacco",Tobacco,48242.0,1625700.0
-46,"Food, Beverages &  Tobacco",Food Production,142664.0,426290.0
-47,"Food, Beverages &  Tobacco",Food Consumer Products,213238.0,2611480.0
-48,"Food, Beverages &  Tobacco",Beverages,60435.0,527330.0
-49,Food &  Drug Stores,Food and Drug Stores,384245.0,930430.0
-50,Financials,Securities,53729.0,1406120.0
-51,Financials,Real estate,40459.0,456360.0
-52,Financials,Insurance: Property and Casualty (Stock),568080.0,6992820.0
-53,Financials,Insurance: Property and Casualty (Mutual),149482.0,402160.0
-54,Financials,"Insurance: Life, Health (stock)",232266.0,2714630.0
-55,Financials,"Insurance: Life, Health (Mutual)",167966.0,577070.0
-56,Financials,Diversified Financials,361828.0,2419400.0
-57,Financials,Commercial Banks,658496.0,11763430.0
-58,Engineering &  Construction,Homebuilders,47447.0,336910.0
-59,Engineering &  Construction,"Engineering, Construction",80187.0,208490.0
-60,Energy,Utilities: Gas and Electric,294521.0,3519990.0
-61,Energy,Pipelines,146108.0,533810.0
-62,Energy,Petroleum Refining,704073.0,4303298.0
-63,Energy,"Oil and Gas Equipment, Services",27924.0,70000.0
-64,Energy,"Mining, Crude-Oil Production",133640.0,1110360.0
-65,Energy,Energy,91928.0,605680.0
-66,Chemicals,Chemicals,195173.0,1840880.0
-67,Business Services,Waste Management,24527.0,322740.0
-68,Business Services,Temporary Help,21034.0,54540.0
-69,Business Services,Miscellaneous,6641.0,134600.0
-70,Business Services,Financial Data Services,90126.0,1928080.0
-71,Business Services,Diversified Outsourcing Services,43889.0,277280.0
-72,Business Services,"Advertising, marketing",23156.0,166740.0
-73,Apparel,Apparel,68796.0,555390.0
-74,Aerospace &  Defense,Aerospace and Defense,352746.0,2485190.0
+,Sector,Industry,Revenues,Profits,Profit_Margin
+0,Wholesalers,Wholesalers: Health Care,509026.0,737250.0,1.448354308031417
+1,Wholesalers,Wholesalers: Food and Grocery,125908.0,189960.0,1.5087206531753343
+2,Wholesalers,Wholesalers: Electronics and Office Equipment,111433.0,145410.0,1.3049096766666965
+3,Wholesalers,Wholesalers: Diversified,82966.0,313320.0,3.7764867536099125
+4,Transportation,"Trucking, Truck Leasing",14520.0,147690.0,10.171487603305785
+5,Transportation,Transportation and Logistics,37171.0,133440.0,3.5898953485243874
+6,Transportation,Transportation Equipment,11152.0,69430.0,6.225789096126255
+7,Transportation,Railroads,43199.0,2158700.0,49.97106414500335
+8,Transportation,"Mail, Package, and Freight Delivery",126191.0,790700.0,6.265898518911809
+9,Transportation,Airlines,157306.0,1329600.0,8.45231586843477
+10,Telecommunications,Telecommunications,459715.0,9956830.0,21.658701586852725
+11,Technology,Semiconductors and Other Electronic Components,2071322.0,3009540.0,1.4529561313982085
+12,Technology,"Scientific,Photographic and  Control Equipment",20918.0,222500.0,10.636772157950091
+13,Technology,Network and Other Communications Equipment,61396.0,1041450.0,16.962831454817902
+14,Technology,Internet Services and Retailing,185449.0,3251170.0,17.531342848977346
+15,Technology,Information Technology Services,139426.0,861220.0,6.176896705062184
+16,Technology,Entertainment,7017.0,27300.0,3.890551517742625
+17,Technology,"Computers, Office Equipment",430214.0,5628200.0,13.08232647008233
+18,Technology,Computer Software,145460.0,3236050.0,22.247009487144233
+19,Retailing,Specialty Retailers: Other,375249.0,2246660.0,5.9871178870563275
+20,Retailing,Specialty Retailers: Apparel,99029.0,753790.0,7.611810681719496
+21,Retailing,Internet Services and Retailing,198330.0,585200.0,2.9506378258458126
+22,Retailing,General Merchandisers,796288.0,1903830.0,2.3908811887156407
+23,Retailing,"Automotive Retailing, Services",114747.0,305360.0,2.6611588974003677
+24,Motor Vehicles &  Parts,Motor Vehicles and Parts,411868.0,1698320.0,4.123457029922208
+25,Media,"Publishing, Printing",15079.0,77240.0,5.122355593872273
+26,Media,Entertainment,173863.0,2181140.0,12.545164871191686
+27,Materials,"Packaging, Containers",90997.0,583450.0,6.411749837906744
+28,Materials,Miscellaneous,6990.0,710.0,0.10157367668097282
+29,Materials,Metals,69495.0,335500.0,4.8276854449960425
+30,Materials,Forest and Paper Products,7196.0,58200.0,8.087826570316842
+31,Materials,"Building Materials, Glass",13418.0,32780.0,2.442987032344612
+32,Industrials,Miscellaneous,31657.0,485800.0,15.345737119752345
+33,Industrials,Industrial Machinery,199832.0,1282960.0,6.420192962088154
+34,Industrials,"Electronics, Electrical Equip.",78214.0,332770.0,4.254609149257166
+35,Industrials,Construction and Farm Machinery,118363.0,509030.0,4.300583797301521
+36,Household Products,Household and Personal Products,137743.0,2212820.0,16.06484540049222
+37,Household Products,"Home Equipment, Furnishings",44624.0,547940.0,12.279042667622804
+38,"Hotels, Restaurants &  Leisure","Hotels, Casinos, Resorts",67817.0,901550.0,13.293864370290635
+39,"Hotels, Restaurants &  Leisure",Food Services,65399.0,1029910.0,15.748100123855105
+40,Health Care,Pharmaceuticals,321086.0,4480670.0,13.954734868539893
+41,Health Care,Medical Products and Equipment,97690.0,772390.0,7.9065410993960485
+42,Health Care,Health Care: Pharmacy and Other Services,327420.0,1471660.0,4.494716266568933
+43,Health Care,Health Care: Medical Facilities,128091.0,759570.0,5.92992481907394
+44,Health Care,Health Care: Insurance and Managed Care,538417.0,2281370.0,4.237180475356461
+45,"Food, Beverages &  Tobacco",Tobacco,48242.0,1625700.0,33.698851623067036
+46,"Food, Beverages &  Tobacco",Food Production,142664.0,426290.0,2.9880698704648685
+47,"Food, Beverages &  Tobacco",Food Consumer Products,213238.0,2611480.0,12.24678528217297
+48,"Food, Beverages &  Tobacco",Beverages,60435.0,527330.0,8.725572929593778
+49,Food &  Drug Stores,Food and Drug Stores,384245.0,930430.0,2.421449856211532
+50,Financials,Securities,53729.0,1406120.0,26.170596884364123
+51,Financials,Real estate,40459.0,456360.0,11.279566969030377
+52,Financials,Insurance: Property and Casualty (Stock),568080.0,6992820.0,12.3095690747782
+53,Financials,Insurance: Property and Casualty (Mutual),149482.0,402160.0,2.6903573674422336
+54,Financials,"Insurance: Life, Health (stock)",232266.0,2714630.0,11.687590951753593
+55,Financials,"Insurance: Life, Health (Mutual)",167966.0,577070.0,3.435635783432361
+56,Financials,Diversified Financials,361828.0,2419400.0,6.686602474103718
+57,Financials,Commercial Banks,658496.0,11763430.0,17.86408725337739
+58,Engineering &  Construction,Homebuilders,47447.0,336910.0,7.100765064176871
+59,Engineering &  Construction,"Engineering, Construction",80187.0,208490.0,2.6000473892276803
+60,Energy,Utilities: Gas and Electric,294521.0,3519990.0,11.95157560920953
+61,Energy,Pipelines,146108.0,533810.0,3.6535302652832153
+62,Energy,Petroleum Refining,704073.0,4303298.0,6.112005431254998
+63,Energy,"Oil and Gas Equipment, Services",27924.0,70000.0,2.5068041827818366
+64,Energy,"Mining, Crude-Oil Production",133640.0,1110360.0,8.308590242442383
+65,Energy,Energy,91928.0,605680.0,6.588634583587155
+66,Chemicals,Chemicals,195173.0,1840880.0,9.432042341922294
+67,Business Services,Waste Management,24527.0,322740.0,13.158559954336038
+68,Business Services,Temporary Help,21034.0,54540.0,2.5929447561091568
+69,Business Services,Miscellaneous,6641.0,134600.0,20.268031922903177
+70,Business Services,Financial Data Services,90126.0,1928080.0,21.3931606861505
+71,Business Services,Diversified Outsourcing Services,43889.0,277280.0,6.317756157579348
+72,Business Services,"Advertising, marketing",23156.0,166740.0,7.200725513905684
+73,Apparel,Apparel,68796.0,555390.0,8.072998430141288
+74,Aerospace &  Defense,Aerospace and Defense,352746.0,2485190.0,7.0452676997046035
