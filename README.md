@@ -12,7 +12,9 @@
 **Datasets**
 
 [Kaggle](https://www.kaggle.com/Eruditepanda/fortune-1000-2018)
+
 [Quandl](https://www.quandl.com/)
+
 [DataPub](https://datahub.io/core/s-and-p-500-companies)
 
 An investor with 1M$ would like to know, in which company he should invest for getting the maximum returns. In this project, we would analyze the financial data of Fortune 500 companies to assist the investor in making the correct choice by doing following analysis.
