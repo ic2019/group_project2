@@ -2,9 +2,11 @@
 ## Data Visualization project.
 
 ### Fortune 500 Financial Analysis
+
 **Team**
+
  -	Cletus
- -      Jake
+ - Jake
  -	Indu
  -	Mythili
  -	Satheesh
