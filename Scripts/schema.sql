@@ -36,8 +36,12 @@ create table sector_industry (
 		"Sector" varchar not null,
 		"Industry" varchar not null,
 		"Revenues" numeric not null,
-		"Profits" numeric not null
+		"Profits" numeric not null,
+	    "Revenue_Percent" numeric not null,
+	    "Profit_Percent" numeric not null,
+	    "Profit_Margin" decimal not null
 );
+
 
 
 
