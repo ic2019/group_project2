@@ -1,4 +1,4 @@
-Rank,Title,Employees,CEO,CEO Title,Sector,Industry,Years_on_Fortune_500_List,City,State,Latitude,Longitude,Revenues,Revenue_Change,Profits,Profit_Change,Assets,Mkt_Value_as_of_3/29/18,Symbol
+Rank,Title,Employees,CEO,CEO_Title,Sector,Industry,Years_on_Fortune_500_List,City,State,Latitude,Longitude,Revenues,Revenue_Change,Profits,Profit_Change,Assets,Mkt_Value,Symbol
 1,Walmart,2300000,C. Douglas McMillon,"President, Chief Executive Officer &  Director",Retailing,General Merchandisers,24,Bentonville,AR,36.372853799999994,-94.2088172,500343.0,300.0,986200.0,2770.0,204522.0,263563.0,WMT
 2,Exxon Mobil,71200,Darren W. Woods,Chairman &  Chief Executive Officer,Energy,Petroleum Refining,24,Irving,TX,32.814017699999994,-96.9488945,244363.0,1740.0,1971000.0,15140.0,348691.0,316157.0,XOM
 3,Berkshire Hathaway,377000,Warren E. Buffett,"Chairman, President &  Chief Executive Officer",Financials,Insurance: Property and Casualty (Stock),24,Omaha,NE,41.2565369,-95.93450340000001,242137.0,830.0,4494000.0,8670.0,702095.0,492008.0,BRK.B
