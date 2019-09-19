@@ -7,11 +7,11 @@ drop table fortune500;
 
 ------Create table fortune500 data------
 create table fortune500 (
-	"Rank" int not null,
+	"Rank" int primary key,
 	"Title" varchar not null,
 	"Employees" int not null,
 	"CEO" varchar not null,
-	"CEO Title" varchar not null,
+	"CEO_Title" varchar not null,
 	"Sector" varchar not null,
 	"Industry" varchar not null,
 	"Years_on_Fortune_500_List" varchar not null,
@@ -24,7 +24,7 @@ create table fortune500 (
 	"Profits" numeric,
 	"Profit_Change" numeric,
 	"Assets" numeric,
-	"Mkt_Value_as_of_3/29/18" numeric,
+	"Mkt_Value" numeric,
 	"Symbol" char(10)
 	);
 
@@ -33,7 +33,7 @@ drop table sector_industry;
 
 -------------Creating sector_industry table--------------
 create table sector_industry (
-		"Sector" varchar not null,
+		"Sector" varchar primary key,
 		"Industry" varchar not null,
 		"Revenues" numeric not null,
 		"Profits" numeric not null,
