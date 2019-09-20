@@ -1,1 +1,1 @@
-passwd = 'enter your password'
+passwd = 'your password'
