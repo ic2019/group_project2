@@ -8,6 +8,9 @@ from sqlalchemy import create_engine, inspect
 
 from flask import Flask, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
+import main
+
+
 
 app = Flask(__name__)
 
@@ -21,8 +24,7 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
 
-# from .models import Fortune500, Sector_Industry
-
+#from models import Fortune500, Sector_Industry
 class Fortune500(db.Model):
 	__tablename__ = 'fortune500'
 
@@ -57,25 +59,33 @@ class Sector_Industry(db.Model):
     Profit_Percent = db.Column(db.Float)
     Profit_Margin = db.Column(db.Float)
 
+
+
+@app.before_first_request
+def setup():
+	main.init()
+
+
+
+
 @app.route("/")
 def index():
     """Return the homepage"""
     return render_template("indu.html")
 
-@app.route("/timeseries", methods = ['POST', 'GET'])
+@app.route("/timeseries")
 def timeseries():
-    """Return fortune100 companies list"""
+    """Return fortune500 companies tick symbols for Time Series chart"""
     results = db.session.query(Fortune500.Rank, Fortune500.Title, Fortune500.Symbol).all()
 
-    # Use Pandas to perform the sql query
-    df = pd.DataFrame(results, columns=['Rank','Title', 'Symbol'])
-                                                                                                                                                                           
-    # stockData = df.to_dict(orient="records")
     stockData = []
     for row in results:
-       #stockData.append(f'{row["Rank"]} {row["Title"]} {row["Symbol"]}')
        stockData.append(f'{list(row)[0]} : {list(row)[1]} : {list(row)[2]}')    
     return render_template('visualization/time.html', data = stockData)
+	
+@app.errorhandler(404)
+def page_not_found(error):
+	return render_template('404.html'), 404
     
 
 

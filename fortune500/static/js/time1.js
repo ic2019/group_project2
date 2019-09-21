@@ -36,10 +36,7 @@ function handleSubmit(e) {
     console.log(text);
 
   // Clearing the all the element data from the dropdown from the selection
-  $('#form').trigger("reset");
-  $("#selDataset option:selected").each(function(){
-    $(this).removeAttr("selected");
-  });
+ 
     var stockList = text.split(',');
     for (var i=0; i < stockList.length; i++) {
         stock.push(stockList[i].split(':')[2].trim());
@@ -54,11 +51,13 @@ function handleSubmit(e) {
   function buildPlot(stock, startDate, endDate) {
       //var apiKey = "YOUR KEY HERE";
       var name =  openingPrices = highPrices = lowPrices = closingPrices = dates = trace = [];
-
+      if (stock.length > 2) {
+        alert("Max 2 stocks only can be selected !");
+      }
       for (var i=0; i < stock.length; i++) {
         var url = `https://www.quandl.com/api/v3/datasets/WIKI/${stock[i]}.json?start_date=${startDate}&end_date=${endDate}&api_key=${apiKey}`;
         console.log(url);
-           
+       var ctr = 1;    
       d3.json(url).then(function(data) {
         console.log(data);
     
@@ -107,11 +106,31 @@ function handleSubmit(e) {
             type: "linear"
           }
         };
-    
-        Plotly.newPlot("time", data, layout);
+        if (ctr === 1) {
+          console.log("I am plot1");
+          Plotly.newPlot("time1", data, layout);
+        } else  {
+          console.log("Iam plot2");
+          Plotly.newPlot("time2", data, layout);
+        }
+        ctr += 1;
+        
       }).catch(function(e) {
         console.error(e);
       });
 
     }
+  }
+
+  /**
+   * Function to reset the form
+   */
+  function myFunction() {
+    $('#form').trigger("reset");
+    $("#selDataset option:selected").each(function(){
+      $(this).removeAttr("selected");
+    });
+    $('#reset').click(function() {
+      location.reload();
+    });
   }
