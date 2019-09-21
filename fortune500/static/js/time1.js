@@ -57,28 +57,28 @@ function handleSubmit(e) {
 
       for (var i=0; i < stock.length; i++) {
         var url = `https://www.quandl.com/api/v3/datasets/WIKI/${stock[i]}.json?start_date=${startDate}&end_date=${endDate}&api_key=${apiKey}`;
-
+        console.log(url);
            
       d3.json(url).then(function(data) {
         console.log(data);
     
         // Grab values from the response json object to build the plots
-        name[i] = data.dataset.name;
+        name = data.dataset.name;
         //stock[i] = data.dataset.dataset_code;
         //var startDate = data.dataset.start_date;
         //var endDate = data.dataset.end_date;
-        dates[i] = unpack(data.dataset.data, 0);
-        openingPrices[i] = unpack(data.dataset.data, 1);
-        highPrices[i] = unpack(data.dataset.data, 2);
-        lowPrices[i] = unpack(data.dataset.data, 3);
-        closingPrices[i] = unpack(data.dataset.data, 4);
+        dates = unpack(data.dataset.data, 0);
+        openingPrices = unpack(data.dataset.data, 1);
+        highPrices = unpack(data.dataset.data, 2);
+        lowPrices = unpack(data.dataset.data, 3);
+        closingPrices = unpack(data.dataset.data, 4);
         //trace[i] = `trace${i}`
          trace1 = {
           type: "scatter",
           mode: "lines",
-          name: name[i],
-          x: dates[i],
-          y: closingPrices[i],
+          name: name,
+          x: dates,
+          y: closingPrices,
           line: {
             //color: "#17BECF"
           }
@@ -87,17 +87,17 @@ function handleSubmit(e) {
         // Candlestick Trace
         var trace2 = {
           type: "candlestick",
-          x: dates[i],
-          high: highPrices[i],
-          low: lowPrices[i],
-          open: openingPrices[i],
-          close: closingPrices[i]
+          x: dates,
+          high: highPrices,
+          low: lowPrices,
+          open: openingPrices,
+          close: closingPrices
         };
     
         var data = [trace1, trace2 ];
     
         var layout = {
-          title: `${stock[i]} closing prices`,
+          title: `${name} closing prices`,
           xaxis: {
             range: [startDate, endDate],
             type: "date"
@@ -115,4 +115,3 @@ function handleSubmit(e) {
 
     }
   }
-  
