@@ -1,0 +1,49 @@
+{% extends "indu.html" %}
+{% block title %}Time Series stock analysis{% endblock %}
+            <!-- <div class="row"> -->
+                <!-- <div class="col-md-12"> -->
+                    <form class="form-inline" id="form">
+                        <div class="form-group">
+                                {% block body %}
+                                <h5>Enter the stock details to generate time series chart</h5>
+                                <select required multiple id="selDataset">
+                                    <!-- onchange="optionChanged(this.value)" -->
+                                <!-- <option selected disabled>Choose one</option> -->
+                                <div class="container row">
+                                    <div class="col-md-5">
+                                            {% for row in data %}
+                                            <!-- <option>{{ row.Rank }}: {{row.Title}} : {{row.Symbol}}</option> -->
+                                            <option>{{ row }}</option>
+                                            {% endfor %}
+                                            </select>
+                                            <p>Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
+                                        
+                                    <!-- </div> -->
+                                    <!-- <div class="col-md-5"> -->
+                                            <label>Start Date</label><input type="date" class="form-control" id="startDate"  min="2015-01-01" max="2019-12-01" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+                                            
+                                            <label>End Date</label><input type="date" class="form-control" id="endDate"  min="2015-01-01" max="2019-12-01" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">  
+                                                                                    
+                                            <button id="submit" type="submit" class="btn btn-primary" onclick="handleSubmit(event)" >Plot Stock</button>
+                                            <!-- onclick="handleSubmit(event)" -->
+                                    </div>
+                                    <div class="container row">
+                                        <div class="col-md-12">
+                                                <div id="time"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                        </div>
+                    </form>
+                    
+                <!-- </div> -->
+            <!-- </div> -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+            <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+            <!-- <script src="{{ url_for('static', filename='js/time1.js') }}"></script> -->
+            <script src="../../static/js/config.js"></script>
+            <script var stock; src="../../static/js/time1.js"></script>
+{% endblock %}
