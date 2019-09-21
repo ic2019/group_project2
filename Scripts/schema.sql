@@ -3,7 +3,7 @@ create database fortune500_db;
 
 ------Create table fortune500 data------
 ----dropping table if already exists---
-drop table fortune500;
+drop table if exists fortune500;
 
 ------Create table fortune500 data------
 create table fortune500 (
@@ -29,11 +29,12 @@ create table fortune500 (
 	);
 
 ----------------Dropping sector_industry table if already exists----------
-drop table sector_industry;
+drop table if exists sector_industry;
 
 -------------Creating sector_industry table--------------
 create table sector_industry (
-		"Sector" varchar primary key,
+		"id" serial primary key,
+		"Sector" varchar not null,
 		"Industry" varchar not null,
 		"Revenues" numeric not null,
 		"Profits" numeric not null,
