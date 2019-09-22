@@ -53,10 +53,27 @@ function visualize(rank) {
 
   return color
 }
-
-
 //path for the csv data
 var path = "/fortune_api_500"
+
+
+function genCircle(companies) {
+  console.log(companies);
+//   companies.forEach(company => {
+// //    console.log(company);
+  // for (var i = 0; i < companies.length)
+  //   L.circle([company.lati, company.longi], {
+  //     fillOpacity: 0.75,
+  //     color: "emerald",
+  //     fillColor: visualize(company.ranks),
+  //     radius: markerSize(company.revenues)      
+  //   })
+  //   .bindPopup("<h1>" + company.titles + "</h1> <hr> <h3>Rank: " + company.ranks + "</h3>" + "<h3>Revenue: " 
+  //   + company.revenues + "</h3>" + "<h3>Employee Count: " + company.employee)
+  //   .addTo(myMap);  
+  // })
+}
+
 
 d3.json(path).then(function(fortune500) {
 //  d3.json(url).then(function(response) {
@@ -69,26 +86,47 @@ d3.json(path).then(function(fortune500) {
     employee: fortune500.emp_cnt,
     lati: fortune500.lat,
     longi: fortune500.long,
-    sect: fortune500.sector
+    sect: fortune500.sector 
   }
-  console.log(fortune500)
+  genCircle(portfo)
 
-  for (var i = 0; i < portfo.length; i++) {
-//    var country = countries;
-    var color = "";
-    console.log(portfo.length)
-    var location = [portfo.lati[i], portfo.longi[i]];
 
-    //creating the circles
-    L.circle(location, {
-      fillOpacity: 0.75,
-      color: "emerald",
-      fillColor: visualize(portfo.ranks[i]),
-      //created a function that would return the points, multiplied for visibility
-      radius: markerSize(portfo.revenues[i])
-    })
-    .bindPopup("<h1>" + portfo.titles[i] + "</h1> <hr> <h3>Rank: " + portfo.ranks[i] + "</h3>" + "<h3>Revenue: " 
-    + portfo.revenues[i] + "</h3>" + "<h3>Employee Count: " + portfo.employee[i])
-    .addTo(myMap);
-  }
-})
+  // foreach (var i = 0; i < portfo.length; i++) {
+  //   var company = portfo;
+  //   //var color = "";
+  //   console.log("Count is ", company.length)
+  //   var location = [company.lati[i], company.longi[i]];
+
+  //   //creating the circles
+  //   L.circle(location, {
+  //     fillOpacity: 0.75,
+  //     color: "emerald",
+  //     fillColor: visualize(company.ranks[i]),
+  //     //created a function that would return the points, multiplied for visibility
+  //     radius: markerSize(company.revenues[i])
+  //   })
+  //   .bindPopup("<h1>" + company.titles[i] + "</h1> <hr> <h3>Rank: " + company.ranks[i] + "</h3>" + "<h3>Revenue: " 
+  //   + company.revenues[i] + "</h3>" + "<h3>Employee Count: " + company.employee[i])
+  //   .addTo(myMap);
+  // }
+});
+
+
+// foreach (var i = 0; i < portfo.length; i++) {
+//   var company = portfo;
+//   //var color = "";
+//   console.log("Count is ", company.length)
+//   var location = [company.lati[i], company.longi[i]];
+
+//   //creating the circles
+//   L.circle(location, {
+//     fillOpacity: 0.75,
+//     color: "emerald",
+//     fillColor: visualize(company.ranks[i]),
+//     //created a function that would return the points, multiplied for visibility
+//     radius: markerSize(company.revenues[i])
+//   })
+//   .bindPopup("<h1>" + company.titles[i] + "</h1> <hr> <h3>Rank: " + company.ranks[i] + "</h3>" + "<h3>Revenue: " 
+//   + company.revenues[i] + "</h3>" + "<h3>Employee Count: " + company.employee[i])
+//   .addTo(myMap);
+// }
