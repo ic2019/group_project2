@@ -39,24 +39,27 @@ function handleSubmit(e) {
  
     var stockList = text.split(',');
     for (var i=0; i < stockList.length; i++) {
-        stock.push(stockList[i].split(':')[2].trim());
+        stock.push(stockList[i].split(':')[1].trim());
     }
     
     console.log(stock);
-    buildPlot(stock,startDate,endDate);
+    buildPlotTime(stock,startDate,endDate);
 
 }
     // Select the input value from the form
 
-  function buildPlot(stock, startDate, endDate) {
+  function buildPlotTime(stock, startDate, endDate) {
       //var apiKey = "YOUR KEY HERE";
-      var name =  openingPrices = highPrices = lowPrices = closingPrices = dates = trace = [];
+      var name,  openingPrices, highPrices, lowPrices, closingPrices, dates, trace = [];
       if (stock.length > 2) {
         alert("Max 2 stocks only can be selected !");
       }
       for (var i=0; i < stock.length; i++) {
-        var url = `https://www.quandl.com/api/v3/datasets/WIKI/${stock[i]}.json?start_date=${startDate}&end_date=${endDate}&api_key=${apiKey}`;
-        console.log(url);
+        
+          var url = `https://www.quandl.com/api/v3/datasets/WIKI/${stock[i]}.json?start_date=${startDate}&end_date=${endDate}&api_key=${apiKey}`;
+          console.log(url);
+        
+       
        var ctr = 1;    
       d3.json(url).then(function(data) {
         console.log(data);
@@ -71,11 +74,14 @@ function handleSubmit(e) {
         highPrices = unpack(data.dataset.data, 2);
         lowPrices = unpack(data.dataset.data, 3);
         closingPrices = unpack(data.dataset.data, 4);
+        var lgName = name.split(',')[0];
+        var lastIndex = lgName.lastIndexOf(" ");
+        lgName = lgName.substring(0, lastIndex);
         //trace[i] = `trace${i}`
          trace1 = {
           type: "scatter",
           mode: "lines",
-          name: name,
+          name: lgName,
           x: dates,
           y: closingPrices,
           line: {
@@ -96,7 +102,7 @@ function handleSubmit(e) {
         var data = [trace1, trace2 ];
     
         var layout = {
-          title: `${name} closing prices`,
+          title: `${lgName} Closing Prices`,
           xaxis: {
             range: [startDate, endDate],
             type: "date"
@@ -104,7 +110,8 @@ function handleSubmit(e) {
           yaxis: {
             autorange: true,
             type: "linear"
-          }
+          },
+          showlegend: true
         };
         if (ctr === 1) {
           console.log("I am plot1");
@@ -115,8 +122,9 @@ function handleSubmit(e) {
         }
         ctr += 1;
         
-      }).catch(function(e) {
-        console.error(e);
+      }).catch(function(err) {
+        document.getElementById("error").innerHTML = `No data in Quandl for ${stock[i]}. Reset to another stock!`;
+        // alert('No data in Quandl. Reset to try another stock!')
       });
 
     }
@@ -126,11 +134,14 @@ function handleSubmit(e) {
    * Function to reset the form
    */
   function myFunction() {
+    /*
     $('#form').trigger("reset");
     $("#selDataset option:selected").each(function(){
       $(this).removeAttr("selected");
     });
+    */
     $('#reset').click(function() {
       location.reload();
     });
+    
   }

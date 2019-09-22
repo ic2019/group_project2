@@ -1,0 +1,59 @@
+{% extends "nav.html" %}
+{% block title %}Time Series stock analysis{% endblock %}
+{% block body %}
+    <h2>Sector Analysis by Revenue and Profit</h2>
+​
+<!-- <div class="row"> -->
+                <!-- <div class="col-md-12"> -->
+                    <form class="form-inline" id="form">
+                        <div class="form-group">
+                                <!-- {% block body %} -->
+                                <h5>Enter the sector analysis for revenue and profit pie chart</h5>
+                                
+                                    <!-- onchange="optionChanged(this.value)" -->
+                                <!-- <option selected disabled>Choose any two</option> -->
+                                <div class="container">
+                                    <div class="row">
+                                            <div class="col-md-12">
+                                                <select required multiple id="selDataset1">
+                                                    {% for value in data.Sector | unique %}
+                                                    
+                                                    
+                                                         <option>{{ value }}</option>
+                                                    
+                                                    {% endfor %}
+                                                </select>
+                                            
+                                                
+                                            </div>
+                                    
+​
+                                    </div>
+                                    
+                                
+                                <div class="row">
+​
+                                            <div class="col-md-12">
+                                                <div id="pie1"></div>
+                                            </div>
+                                
+                                
+                                            <div class="col-md-12">
+                                                <div id="pie2"></div>
+                                            </div>
+                                </div>
+                            </div>
+​
+                                
+​
+                        </div>
+                    </form>
+                    
+                <!-- </div> -->
+            <!-- </div> -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+            <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+            
+             <script var src="../static/app.js"></script>
+    {% endblock %}

@@ -3,86 +3,121 @@ import pandas as pd
 import numpy as np
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, exc
 from sqlalchemy import create_engine, inspect
 
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template, url_for
 from flask_sqlalchemy import SQLAlchemy
-import main
+import etl
+import json
+from models import db,Fortune500, Sector_Industry
+from config import SQLALCHEMY_DATABASE_URI
 
-
+#Initializing app
 
 app = Flask(__name__)
-
-
+db.init_app(app)
 ###########################
 # Database Setup
 ###########################
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://postgres:password@localhost:5432/fortune500_db"
+app.config["SQLALCHEMY_DATABASE_URI"] = SQLALCHEMY_DATABASE_URI
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
 
-#from models import Fortune500, Sector_Industry
-class Fortune500(db.Model):
-	__tablename__ = 'fortune500'
-
-	Rank = db.Column(db.Integer, primary_key=True)
-	Title = db.Column(db.String(250))
-	Employees = db.Column(db.Integer)
-	CEO = db.Column(db.String(250))
-	CEO_Title = db.Column(db.String(300))
-	Sector = db.Column(db.String(300))
-	Industry = db.Column(db.String(300))
-	Years_on_Fortune_500_List = db.Column(db.String(5))
-	City = db.Column(db.String(100))
-	State = db.Column(db.String(100))
-	Latitude = db.Column(db.Float)
-	Longitude = db.Column(db.Float)
-	Revenues = db.Column(db.Float)
-	Revenue_Change = db.Column(db.Float)
-	Profits = db.Column(db.Float)
-	Profit_Change = db.Column(db.Float)
-	Assets = db.Column(db.Float)
-	Mkt_Value = db.Column(db.Float)
-	Symbol = db.Column(db.String(10))
-
-class Sector_Industry(db.Model):
-    __tablename__ = 'sector_industry'
-
-    Sector = db.Column(db.String(300), primary_key=True)
-    Industry = db.Column(db.String(300))
-    Revenues = db.Column(db.Float)
-    Profits = db.Column(db.Float)
-    Revenue_Percent = db.Column(db.Float)
-    Profit_Percent = db.Column(db.Float)
-    Profit_Margin = db.Column(db.Float)
-
-
 
 @app.before_first_request
 def setup():
-	main.init()
-
-
-
+	etl.init()
 
 @app.route("/")
 def index():
     """Return the homepage"""
-    return render_template("indu.html")
+    print(f"Data Loaded to the database!")
+    return render_template("index.html")
 
-@app.route("/timeseries")
+@app.route("/timesrs")
 def timeseries():
     """Return fortune500 companies tick symbols for Time Series chart"""
-    results = db.session.query(Fortune500.Rank, Fortune500.Title, Fortune500.Symbol).all()
+    try:
+      results = db.session.query(Fortune500.Rank, Fortune500.Title, Fortune500.Symbol).all()
 
-    stockData = []
-    for row in results:
-       stockData.append(f'{list(row)[0]} : {list(row)[1]} : {list(row)[2]}')    
-    return render_template('visualization/time.html', data = stockData)
-	
+      stockData = []
+      for row in results:
+         stockData.append(f'{list(row)[1]} : {list(row)[2]} : {list(row)[0]}')    
+      return render_template('timesrs.html', data = stockData)
+    except exc.NoResultFound:
+      abort(404)
+
+@app.route("/gauge")
+def gauge():
+	"""Calculate industry wise profit margin"""
+
+@app.route("/pie")
+def pie():
+   #Return sector analysis by revenue and profit
+   try:
+       results = db.session.query(Sector_Industry.Sector, Sector_Industry.Industry, Sector_Industry.Revenue_Percent, Sector_Industry.Profit_Percent).all()
+       sectorData = {}
+       Sector = []
+       Industry = []
+       Profit_Percent = []
+       Revenue_Percent = []
+       for row in results:
+          Sector.append(list(row)[0])
+          Industry.append(list(row)[1])
+          Revenue_Percent.append(list(row)[2])
+          Profit_Percent.append(list(row)[3])
+       sectorData = pd.DataFrame({
+		 "Sector": Sector,
+		 "Industry": Industry,
+		 "Revenue_Percent": Revenue_Percent,
+		 "Profit_Percent": Profit_Percent
+		
+	  })
+   except exc.NoResultFound:
+        abort(404)
+   
+   
+   return render_template('pie.html', data = sectorData)
+
+@app.route("/profitmargin")
+def profitmargin():
+	results  = db.session.query(Fortune500.Title,Fortune500.Profits,Fortune500.Revenues).limit(5)
+	pf_rev_data = {}
+	for result in results:
+		pf_rev_data["Title"] = result[0]
+		pf_rev_data["Profits"] = result[1]
+		pf_rev_data["Revenues"] = result[2]
+		
+	return jsonify(pf_rev_data)
+
+@app.route("/api/bar")
+def barData():
+   try:
+      results = db.session.query(Fortune500.Symbol, Fortune500.Revenues).limit(10)
+      mydata_final = pd.DataFrame(results, columns=['ticks', 'revenue'])
+
+      return jsonify(mydata_final.to_dict(orient="records"))
+
+   except exc.NoResultFound:
+      abort(404)
+
+@app.route("/api/map")
+def map():
+
+   results = db.session.query(Fortune500.Symbol,Fortune500.Revenues, Fortune500.Profits,\
+               Fortune500.Employees, Fortune500.Latitude, Fortune.Longitude,\
+                  Fortune500.Rank,Fortune500.Title,Fortune500.Sector).all()
+   mydata_final = pd.DataFrame(results, columns=['ticks', 'revenue', 'profit', 'emp_cnt', 'lat', 'long','rank','comp','sector'])
+   mydata_final['revenue_pe'] = mydata_final['revenue'] / mydata_final['emp_cnt']
+   mydata_final['profit_pe'] = mydata_final['profit'] / mydata_final['emp_cnt']
+   mydata_final.column =  ['ticks', 'revenue', 'profit', 'revenue_pe', 'profit_pe' ,'emp_cnt', 'lat', 'long','rank','comp','sector']
+
+   return jsonify(mydata_final.to_dict(orient="records"))
+
+@app.route("/api/pie")
 @app.errorhandler(404)
 def page_not_found(error):
 	return render_template('404.html'), 404

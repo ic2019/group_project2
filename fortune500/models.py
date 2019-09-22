@@ -1,4 +1,6 @@
-from .app import db
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
 
 class Fortune500(db.Model):
 	__tablename__ = 'fortune500'
