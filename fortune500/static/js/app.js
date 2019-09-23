@@ -31,6 +31,8 @@ console.log("I am inside app.js")
  * Below is Satheesh's stuff
  */
 function buildbarPlot() {
+  console.log("I am inside buildbarPlot");
+
 
   var url = "/api/bar";
 
