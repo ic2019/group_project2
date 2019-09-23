@@ -1,10 +1,12 @@
 {% extends "nav.html" %}
 {% block title %}Dashboard{% endblock %}
 {% block body %}
-<!-- Content section -->
-<div class=" container jumbotron">
-    <div class="container row border border-success">
-      <div class="col img-responsive">
+<!-- Content section -->  
+<div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-6 col-md-12 mt-5" id="sumdiv">
         <h1>Welcome investors, let's have "A Peek into US Fortune 500 Financial Data".</h1>
         <hr>
         <img class="img-fluid float-left" src="/static/img/Fig1.jpg" width="250" height="250">
@@ -21,36 +23,57 @@
               Our website gives investors the tools they need to make better and more informed investments while adding to their portfolio.
           </p>        
         <br>
+
       </div>
-      <div class="col img-responsive">
-          <h1>Analysis</h1>
-            
-              <div class="row mx-md-n5">
-               <!-- <div class="container  bg-light"> -->
-                 <div class="col-md-6 img-responsive">
-                    <a href=""><img src="/static/img/bar.png" alt="" class="img-thumbnail w-80 h-80"></a>
-                  </div>
-                  <div class="col-md-6 img-responsive">
-                      <a href=""> <img src="/static/img/bar_pe.png" alt="" class="img-thumbnail w-80 h-80"></a>
-                  </div>
-              <!-- </div> -->
-            </div>
-           
-            <div class="row mx-md-n5 top5">
-              <!-- <div class="container bg-light row"> -->
-              <div class="col-sm-6 img-responsive">
-                  <a href=""> <img src="/static/img/timesrs.png" alt="" class="img-thumbnail w-80 h-80"></a>
-              </div>
-              <div class="col-sm-6 img-responsive">
-              <a href=""><img src="/static/img/timecorr.png" alt="" class="img-thumbnail w-80 h-80"></a>
-              </div>              
-            </div>
-           
+      <div class="col-lg-1">
+      </div>
+      <div class="col-lg-5 col-md-12 mt-5" id="visdiv">
+
+        <h1>Analysis</h1>
+        <hr>
+        <!-- First row -->
+        <div class="row">
+          <div class="col-lg-6">
+            <a href=""><img class="img-thumbnail img-fluid" src="/static/img/bar.png"></a>
+          </div>
+          <div class="col-lg-6">
+            <a href=""><img src="/static/img/bar_pe.png" class="img-fluid img-thumbnail"></a>
+          </div>
+        </div>
+        <!-- End of first row -->
+        <!-- 2nd row -->
+        <div class="row">
+          <div class="col-lg-6">
+            <a href=""><img src="/static/img/timesrs.png" class="img-fluid img-thumbnail"></a>
+          </div>
+          <div class="col-lg-6">
+            <a href=""><img src="/static/img/timecorr.png" class="img-fluid img-thumbnail"></a>
+          </div>
+        </div>
+        <!--End of 2nd row  -->
+        <!-- 3rd row -->
+        <div class="row">
+          <div class="col-lg-6">
+            <a href=""><img src="" class="img-fluid"></a>
+          </div>
+          <div class="col-lg-6">
+            <a href=""><img src="" class="img-fluid"></a>
+          </div>
+        </div>
+        <!-- end of 3rd row -->
+
+      </div>
+        <!-- End of satheesh'a -->                 
       </div>
     </div>
+    </div>
     <p class="card-text text-dark"><marquee direction="left">Fortune 500 companies represent two-thirds of the U.S. GDP with $13.7 trillion in revenues, $1.1 trillion in profits, $22.6 trillion in market value, and employ 28.7 million people worldwide. ( Read More...)</marquee></p>
-</div>
-
+  
+  </div>
+ 
+  
+    
+ 
             <!-- Bootstrap CSS -->
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" -->
   <!-- integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
