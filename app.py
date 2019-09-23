@@ -90,25 +90,50 @@ def index():
 
     return render_template('index.html')
 
-@app.route('/data')    
-def data():
+@app.route('/fortune_api')    
+def fortune_api():
     # Connecting to postgreSQL database
-    DATABASE_URI = f"postgresql://postgres:xxx@localhost:5432/fortune500_db"
+    DATABASE_URI = f"postgresql://postgres:data123@localhost:5432/fortune500_db"
 
     engine = create_engine(DATABASE_URI)
 
-    mydata = pd.read_sql_query('select * from fortune500 limit 10', con=engine)
+    mydata = pd.read_sql_query('select * from fortune500 where length("Symbol") <> 0 limit 10', con=engine)
 
     mydata_final = {
         "ticks": mydata["Symbol"].values.tolist(),
-        "revenue":mydata["Revenues"].values.tolist()
+        "revenue":mydata["Revenues"].values.tolist(),
+        "profit":(mydata["Profits"]/100).values.tolist(),
+        "revenue_pe":(mydata["Revenues"].values/mydata["Employees"]).tolist(),
+        "profit_pe":((mydata["Profits"].values/100)/mydata["Employees"]).tolist(),
+        "emp_cnt":mydata["Employees"].values.tolist(),
+        "lat":mydata["Latitude"].values.tolist(),
+        "long":mydata["Longitude"].values.tolist(),
+        "rank":mydata["Rank"].values.tolist(),
+        "comp":mydata["Title"].values.tolist(),
+        "profitmgn":((mydata["Profits"].values/100)/mydata["Revenues"]).tolist()
     }
 
     return jsonify(mydata_final)
 
-@app.route('/data/bar')
+@app.route('/bar')
 def bar():
     return render_template('bar.html')
 
+@app.route('/bar_pe')
+def bar_pe():
+    return render_template('bar_pe.html')
+
+@app.route('/pie')
+def pie():
+    return render_template('pie.html')    
+
+@app.route('/timesrs')
+def timsrs():
+    return render_template('timesrs.html')
+
+@app.route('/map')
+def map():
+    return render_template('map.html')
+
 if __name__ == '__main__':
-    app.run(debug=True)    
+    app.run(debug=True)
