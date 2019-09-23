@@ -1,3 +1,6 @@
+/**
+ * Below is Mythili's stuff
+ */
 function buildPiePlot() {
     ​
         var url = "/pie";
@@ -21,32 +24,95 @@ function buildPiePlot() {
         })
       };
 
-function buildPlot() {
+console.log("I am inside app.js")
 
-        var url = "/data";
-      
-        d3.json(url).then(function(response) {
-      
-          console.log(response)
-      
-          var data ={
-            labels: [response.ticks],
-            series:[response.revenue]
-          };
-      
-          var options = {
-            width: 500,
-            height: 500
-          };    
-          
-          new Chartist.Bar("#chart2", data, options)
-        })
+//buildPiePlot();
+/**
+ * Below is Satheesh's stuff
+ */
+function buildbarPlot() {
+
+  var url = "/api/bar";
+
+  d3.json(url).then(function(response) {
+
+    var data ={
+      labels: response.ticks,
+      series:[
+              response.revenue,
+              response.profit
+            ]
+    };
+
+    var options = {
+      width: 600,
+      height: 600,
+      seriesBarDistance: 10
+    };    
+    
+    new Chartist.Bar("#barchart", data, options)
+  })
 };
 
-console.log("I am inside app.js")
-buildbarPlot();
+function buildbarPlot_pr() {
 
-buildPiePlot();
+  var url = "/api/bar";
+
+  d3.json(url).then(function(response) {
+
+    var data ={
+      labels: response.ticks,
+      series: [response.profitmgn]
+    };
+    console.log(data)
+    var options = {
+      width: 600,
+      height: 600,
+      seriesBarDistance: 10
+    };    
+    
+    new Chartist.Bar("#barchart_pr", data, options)
+  })
+};
+
+function buildbarPlot_pe() {
+
+  var url = "/api/bar";
+
+  d3.json(url).then(function(response) {
+
+    // console.log(response)
+
+    var data ={
+      labels: response.ticks,
+      series:[
+              response.revenue_pe,
+              response.profit_pe
+            ]
+    };
+
+    var options = {
+      width: 600,
+      height: 600,
+      seriesBarDistance: 10,
+      reverseData: true,
+      horizontalBars: true
+      // plugins:[
+      //   Chartist.plugins.tooltip()
+      // ]
+    };    
+    
+    new Chartist.Bar("#barchart_pe", data, options)
+  })
+};
+
+buildbarPlot();
+buildbarPlot_pr();
+buildbarPlot_pe();
+
+/**'
+ * 
+ */
     
     
     

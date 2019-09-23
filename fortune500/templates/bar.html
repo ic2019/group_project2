@@ -2,14 +2,31 @@
 {% block title %}Revenue Profit Analysis Chart{% endblock %}
 {% block body %}
 
-<div class="container"></div>
-
-    <div class="ct-chart ct-golden-section" id="chart2" href="/data"></div> 
-
-  <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
-  <!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> -->
-  <script src="{{ url_for('static', filename='js/app.js') }}"></script>  
+<div class="container">
+    <!-- Beginning of bar chart  -->
+    <div class="container">
+        <div class="row">    
+            <div class="col-lg-6 col-md-12 mt-5">
+              <h2>Revenue and Profit Analysis</h2>
+              <div class="ct-chart ct-golden-section" id="barchart" href="/fortune_api"></div>
+    
+            </div>
+            <div class="col-lg-6 col-md-12 mt-5">
+              <h2>Profit Margin Analysis</h2>
+              <div class="ct-chart ct-golden-section" id="barchart_pr" href="/fortune_api"></div>
+            </div>
+        </div>
+      </div>
+      <div id="barchart-label">
+        <li style="background-color: #D70206">Revenue</li>
+        <li style="background-color: #F05B4F">Profit</li>
+      </div>          
+</div>
+    <!-- End of bar chart -->
+    <!-- Beginning of linking external files -->
+    <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>  
 
 {% endblock %}

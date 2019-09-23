@@ -1,26 +1,19 @@
 {% extends "nav.html" %}
-{% block title %}Time Series stock analysis{% endblock %}
+{% block title %}Sector Analysis by Revenue and Profit{% endblock %}
 {% block body %}
-    <h2>Sector Analysis by Revenue and Profit</h2>
-​
 <!-- <div class="row"> -->
                 <!-- <div class="col-md-12"> -->
                     <form class="form-inline" id="form">
                         <div class="form-group">
-                                <!-- {% block body %} -->
-                                <h5>Enter the sector analysis for revenue and profit pie chart</h5>
-                                
-                                    <!-- onchange="optionChanged(this.value)" -->
-                                <!-- <option selected disabled>Choose any two</option> -->
-                                <div class="container">
+                                <!-- <h5>Select the sector</h5> -->
+                                 <div class="container">
                                     <div class="row">
                                             <div class="col-md-12">
+                                                <p>Select the sector</p>
                                                 <select required multiple id="selDataset1">
-                                                    {% for value in data.Sector | unique %}
+                                                    {% for value in data.Sector | unique %}                                               
                                                     
-                                                    
-                                                         <option>{{ value }}</option>
-                                                    
+                                                         <option>{{ value }}</option>                                                    
                                                     {% endfor %}
                                                 </select>
                                             
@@ -56,4 +49,4 @@
             <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
             
              <script var src="../static/app.js"></script>
-    {% endblock %}
+{% endblock %}

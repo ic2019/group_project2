@@ -4,23 +4,30 @@
     <!-- Required meta tags -->
     <!-- <meta charset="utf-8"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./../static/css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
-    <!-- Bootswatch link for lumen theme-->
-    #<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lumen/bootstrap.min.css" rel="stylesheet" integrity="sha384-iqcNtN3rj6Y1HX/R0a3zu3ngmbdwEa9qQGHdkXwSRoiE+Gj71p0UNDSm99LcXiXV" crossorigin="anonymous">
-    #<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cyborg/bootstrap.min.css" rel="stylesheet" integrity="sha384-mtS696VnV9qeIoC8w/PrPoRzJ5gwydRVn0oQ9b+RJOPxE1Z1jXuuJcyeNxvNZhdx" crossorigin="anonymous">
-    #<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/sketchy/bootstrap.min.css" rel="stylesheet" integrity="sha384-N8DsABZCqc1XWbg/bAlIDk7AS/yNzT5fcKzg/TwfmTuUqZhGquVmpb5VvfmLcMzp" crossorigin="anonymous">
-    #<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/sandstone/bootstrap.min.css" rel="stylesheet" integrity="sha384-G3Fme2BM4boCE9tHx9zHvcxaQoAkksPQa/8oyn1Dzqv7gdcXChereUsXGx6LtbqA" crossorigin="anonymous">
+    <!-- Bootswatch link for Dark theme-->
     <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/darkly/bootstrap.min.css" rel="stylesheet" integrity="sha384-w+8Gqjk9Cuo6XH9HKHG5t5I1VR4YBNdPt/29vwgfZR485eoEJZ8rJRbm3TR32P6k" crossorigin="anonymous">
+    <!-- Satheesh library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chartist-plugin-tooltip@0.0.11/chartist-plugin-tooltip.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" -->
+      <!-- integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap" rel="stylesheet">    
     <title>A Peek into US Fortune 500 Data</title>
   </head>
   <body>
-	  <div class="container bg-light font-weight-bold">
+	  <div class="container">
 	  <!-----Code for nav bar-->
 		<nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="nav">
-				<a class="navbar-brand text-white font-weight-bold" href="/">US Fortune500 Dashboard</a>
+				<a class="navbar-brand" href="/">US Fortune500 Dashboard</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 				  <span class="navbar-toggler-icon"></span>
 				</button>
@@ -35,6 +42,14 @@
 						<a class="dropdown-item" href="/bar">Revenue Vs Profit</a>
 						<a class="dropdown-item" href="/bar_pe">Worker Profitability</a>
             <a class="dropdown-item" href="/timesrs">Stock Analysis</a>
+            <!-- <li class="nav-item dropdown"></li> -->
+            <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
+              <!-- Stock Analysis -->
+              <!-- </a> -->
+              <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"></div> -->
+              <!-- <a class="dropdown-item" href="/timesrs">Stock Prices Trend</a> -->
+              <!-- <a class="dropdown-item" href="/timecorr">Stock Correlation</a> -->
+            <!-- </li> -->
             <a class="dropdown-item" href="/pie">Sector Analysis</a>
             <a class="dropdown-item" href="/map">Map</a>
 					  </div>
@@ -44,16 +59,22 @@
                   API
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="/api/bar">API/Revenue&Profit Data</a>
-                  <a class="dropdown-item" href="/api/bar_pe">API/Revenue&Profit Data</a>
-                  <a class="dropdown-item" href="/api/timesrs">API/Stock Data</a>
-                  <a class="dropdown-item" href="/api/pie">API/Sector Data</a>
-                  <a class="dropdown-item" href="/api/map">API/MAP Data</a>
+                  <a class="dropdown-item" href="/api/fortune500">A Sample Fortune 500 Data</a>
+                  <a class="dropdown-item" href="/api/bar">Top 10 Revenue & Profit Data</a>
+                  <a class="dropdown-item" href="/api/timesrs">A Sample Stock Data</a>
+                  <a class="dropdown-item" href="/api/pie">Aggregated Sector Data</a>
+                  <a class="dropdown-item" href="/api/map">Map Data</a>
 
 							
 					</li>
-					<li class="nav-item">
-							<a class="nav-link" href="">Others</a>
+					<li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Others
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="/meta">Fortune500 Metadata</a>
+                  <a class="dropdown-item" href="/logdia">Logical Diagram</a>
+
          </li>
 
 				  </ul>
@@ -81,16 +102,14 @@
               </section> 
             <!-- </div> -->
         </div>
-    <!---Beginning of footer-->
-    <!-- <div class="container-fluid bg-dark" id="footer"> -->
-        <!-- Footer Links -->
-
-      <!-- <div class="footer"> -->
-              <!-- <p class="text-center text-white">Copyright @myweatherapi.com</p> -->
-      <!-- </div> -->
-            
-
-    <!-- </div> -->
+        <div id="footer">
+        {% block footer %}
+                <!-- Footer section -->  
+        <footer class="page-footer font-small blue">
+            <div class="footer-copyright text-center py-3">© Copyright | Cletus - Indu - Jake - Mythili - Satheesh | 2019</div>
+        </footer>
+        {% endblock %}
+      </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
