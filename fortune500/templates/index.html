@@ -24,39 +24,51 @@
       </div>
       <div class="col img-responsive">
           <h1>Analysis</h1>
-            
-              <div class="row mx-md-n5">
-               <!-- <div class="container  bg-light"> -->
-                 <div class="col-md-6 img-responsive">
-                    <a href=""><img src="/static/img/bar.png" alt="" class="img-thumbnail w-80 h-80"></a>
-                  </div>
-                  <div class="col-md-6 img-responsive">
-                      <a href=""> <img src="/static/img/bar_pe.png" alt="" class="img-thumbnail w-80 h-80"></a>
-                  </div>
-              <!-- </div> -->
-            </div>
-           
-            <div class="row mx-md-n5 top5">
-              <!-- <div class="container bg-light row"> -->
-              <div class="col-sm-6 img-responsive">
-                  <a href=""> <img src="/static/img/timesrs.png" alt="" class="img-thumbnail w-80 h-80"></a>
-              </div>
-              <div class="col-sm-6 img-responsive">
-              <a href=""><img src="/static/img/timecorr.png" alt="" class="img-thumbnail w-80 h-80"></a>
-              </div>              
-            </div>
-           
-      </div>
-    </div>
-    <p class="card-text text-dark"><marquee direction="left">Fortune 500 companies represent two-thirds of the U.S. GDP with $13.7 trillion in revenues, $1.1 trillion in profits, $22.6 trillion in market value, and employ 28.7 million people worldwide. ( Read More...)</marquee></p>
+<!-- beginning of carousal -->
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+              <img src="{{ url_for('static', filename='img/bar.png') }}" class="d-block w-100" alt="...">
+              <h5>Top 10 - Revenue and Profit</h5>
+            <p>This chart shows us the revenue and the profit of the top 10 in the Fortune 500 Companies. This is a bar chart that shows revenue and profit side by side to show investors how the top 10 companies stack up versus each other.</p>
+          </div>
+          
+          <div class="carousel-item">
+            <img src="/static/img/bar_pe.png" class="d-block w-100" alt="...">
+            <h5>Second slide label</h5>
+            <p>This chart shows the profit per employee of the top 10 in the Fortune 500 companies. This chart allows investors to drill down into the worker productivity of the top 10 companies of the Fortune 500.</p>
+          </div>
+          <div class="carousel-item">
+            <img src="/static/img/timesrs.png" class="d-block w-100" alt="...">
+            <h5>Sector Analysis</h5>
+            <p>This pie chart allows investors to look at different sectors of the Fortune 500. The sectors that can be chosen consist of the industries in the Fortune 500. This means that investors that have a heavy interest in certain types of industries can drill down into that data.</p>
+          </div>
+          <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+                <h5>Third slide label</h5>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          </div>
+          <div class="carousel-item">
+                    <img src="..." class="d-block w-100" alt="...">
+                    <h5>Third slide label</h5>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          </div>
+        </div>
 </div>
 
-            <!-- Bootstrap CSS -->
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" -->
-  <!-- integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+  <!-- end of carousal   -->
+</div>
+</div>
+<p class="card-text text-dark"><marquee direction="left">Fortune 500 companies represent two-thirds of the U.S. GDP with $13.7 trillion in revenues, $1.1 trillion in profits, $22.6 trillion in market value, and employ 28.7 million people worldwide. ( Read More...)</marquee></p>
+</div>
+
+        <!-- Bootstrap CSS -->
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" -->
+<!-- integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 
 <!-- Styles -->
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap" rel="stylesheet">
+
 {% endblock %}

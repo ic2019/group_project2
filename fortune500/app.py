@@ -42,7 +42,7 @@ def index():
 def timeseries():
     """Return fortune500 companies tick symbols for Time Series chart"""
     try:
-      results = db.session.query(Fortune500.Rank, Fortune500.Title, Fortune500.Symbol).all()
+      results = db.session.query(Fortune500.Rank, Fortune500.Title, Fortune500.Symbol).filter(func.length(Fortune500.Symbol) > 0).all()
       stockData = []
       for row in results:
          stockData.append(f'{list(row)[1]} : {list(row)[2]} : {list(row)[0]}')    
@@ -120,19 +120,30 @@ def sampleData():
 
 @app.route("/api/bar")
 def barData():
-   try:
-      results = db.session.query(Fortune500.Symbol,Fortune500.Revenues, Fortune500.Profits,\
-               Fortune500.Employees, Fortune500.Latitude, Fortune500.Longitude,\
-                  Fortune500.Rank,Fortune500.Title).filter(func.length(Fortune500.Symbol) > 0).limit(10)
-      barData = pd.DataFrame(results, columns=['ticks', 'revenue', 'profit', 'emp_cnt', 'lat', 'long','rank','comp'])
-      barData['revenue_pe'] = barData['revenue'] / barData['emp_cnt']
-      barData['profit_pe'] = barData['profit'] / barData['emp_cnt']
-      barData['profitmgn'] = barData['profit'] / barData['revenue']
-      barData.column =  ['ticks', 'revenue', 'profit', 'revenue_pe', 'profit_pe' ,'emp_cnt', 'lat', 'long','rank','comp','profitmgn']
-      return jsonify(barData.to_dict(orient="records"))
-
-   except exc.NoResultFound:
-      abort(404)
+  try:
+     results = db.session.query(Fortune500.Symbol,Fortune500.Revenues, Fortune500.Profits,\
+              Fortune500.Employees, Fortune500.Latitude, Fortune500.Longitude,\
+                 Fortune500.Rank,Fortune500.Title).filter(func.length(Fortune500.Symbol) > 0).limit(10)
+     ticks    = [result[0] for result in results]
+     revenue  = [result[1] for result in results]
+     profit   = [result[2] for result in results]
+     emp_cnt  = [result[3] for result in results]
+     profitmgn   = [(result[2]/result[1]) for result in results]
+     revenue_pe  = [(result[1]/result[3]) for result in results]
+     profit_pe  = [(result[2]/result[3] * 100) for result in results]
+     # Generate the plot trace
+     barData = {
+        "ticks": ticks,
+        "revenue": revenue,
+        "profit": profit,
+        "profitmgn": profitmgn,
+        "revenue_pe": revenue_pe,
+        "profit_pe": profit_pe,
+        "emp_cnt": emp_cnt
+     }
+     return jsonify(barData)
+  except exc.NoResultFound:
+     abort(404)
 
 @app.route("/api/map")
 def mapData():

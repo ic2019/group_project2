@@ -3,26 +3,23 @@
 {% block body %}
 
 <div class="container">
-
+    
     <!-- Beginning of chart -->
-    <div class="ct-chart ct-golden-section" id="barchart_pe" href="/fortune_api"></div>
-    <div id="barchart-label">
-        <li style="background-color: #D70206">Revenue Per Employee</li>
-        <li style="background-color: #F05B4F">Profit Per Employee</li>
+    
+    <div class="row">
+        <div class="col-md-10">
+            <canvas id="barchart_pe" width="450" height="450"></canvas>
+        </div>
     </div>
-    <!-- End of chart -->
+    
 </div>
 
     <!-- Beginning of linking external dependencies -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chartist-plugin-tooltip@0.0.11/chartist-plugin-tooltip.min.js"></script>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap" rel="stylesheet"> 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>   -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/chartist-plugin-legend/0.6.2/chartist-plugin-legend.min.js"></script> -->
+    <!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> -->
+    <!-- <script src="{{ url_for('static', filename='js/app.js') }}"></script>   -->
+    <script src="{{ url_for('static', filename='js/bar_pe.js') }}"></script>
 {% endblock %}

@@ -54,20 +54,21 @@
                                     <!-- </div> -->
                                     
                                 
-                                <!-- <div class="row"> -->
+                                <div class="row">
 
-                                            <div class="col-lg-6">
-                                                <div id="time1"></div>
+                                            <div class="col-md-6">
+                                                <div id="time1" height="600" width="600"></div>
                                             </div>
                                 
                                 
-                                            <div class="col-lg-6">
-                                                <div id="time2"></div>
+                                            <div class="col-md-6" >
+                                                <div id="time2" height="600" width="600"></div>
                                             </div>
+                                            <br>
                                             <div class="col-lg-12">
-                                                <div id="time3"></div>
+                                                <div id="time3"  height="400" width="800"></div>
                                             </div>
-                                <!-- </div> -->
+                                </div>
                             </div>                         
 
                         </div>
@@ -81,6 +82,5 @@
             <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
             <script src="{{ url_for('static', filename='js/timecorr.js') }}"></script>
             <script src="{{ url_for('static', filename='js/config.js') }}"></script>
-            <!-- <script src="../../static/js/config.js"></script> -->
-            <!-- <script var src="../static/js/time1.js"></script> -->
+
 {% endblock %}
