@@ -1,30 +1,54 @@
 /**
  * Below is Mythili's stuff
  */
-function buildPiePlot() {
-    ​
-        var url = "/pie";
-      
-        d3.json(url).then(function(response) {
-      
-          console.log(response)
-      
-          var data ={
-            labels: [response.industry],
-            values:[response.revenue],
-            type: "pie"
-          };
-      
-          var layout = {
-            height: 600,
-            width: 800
-          };    
-          
-          Plotly.plot("pie", data, layout);
-        })
-      };
 
-console.log("I am inside app.js")
+function init() {
+  console.log("I am inside init")
+  selector = d3.select("#selDataset");
+  //e.preventDefault();
+  sector = selector.node().value;
+  console.log(sector);
+  
+
+}
+
+function buildPiePlot() {
+  console.log("I am inside buildpie plot")
+  var url = "/api/pie";
+  d3.json(url).then(function(response) {
+    console.log(response)
+    var data ={
+      labels: [response.Industry],
+      values:[response.Revenue_Percent],
+      type: "pie"
+    };
+    var layout = {
+      height: 600,
+      width: 800
+    };
+    Plotly.plot("pie", data, layout);
+  })
+ };
+
+  function buildPiePlot_pp() {
+  var url = "/api/pie";
+  d3.json(url).then(function(response) {
+    console.log(response)
+    var data ={
+      labels: [response.Industry],
+      values:[response.Profit_Percent],
+      type: "pie"
+    };
+    var layout = {
+      height: 600,
+      width: 800
+    };
+    Plotly.plot("pie_pp", data, layout);
+  })
+ };
+
+
+
 
 //buildPiePlot();
 /**
@@ -108,9 +132,16 @@ function buildbarPlot_pe() {
   })
 };
 
+// Main Program
+init();
+
+//buildPiePlot();
+//buildPiePlot_pp();
+/*
 buildbarPlot();
 buildbarPlot_pr();
 buildbarPlot_pe();
+*/
 
 /**'
  * 
