@@ -1,76 +1,76 @@
-Sector,Industry,Revenues,Profits,Revenue_Percent,Profit_Percent,Profit_Margin
-Aerospace &  Defense,Aerospace and Defense,352746,2485190,100,100,7.0452677
-Apparel,Apparel,68796,555390,100,100,8.07299843
-Business Services,"Advertising, marketing",23156,166740,11.06,5.78,7.200725514
-Business Services,Diversified Outsourcing Services,43889,277280,20.96,9.61,6.317756158
-Business Services,Financial Data Services,90126,1928080,43.05,66.85,21.39316069
-Business Services,Miscellaneous,6641,134600,3.17,4.67,20.26803192
-Business Services,Temporary Help,21034,54540,10.05,1.89,2.592944756
-Business Services,Waste Management,24527,322740,11.71,11.19,13.15855995
-Chemicals,Chemicals,195173,1840880,100,100,9.432042342
-Energy,Energy,91928,605680,6.57,5.97,6.588634584
-Energy,"Mining, Crude-Oil Production",133640,1110360,9.56,10.95,8.308590242
-Energy,"Oil and Gas Equipment, Services",27924,70000,2,0.69,2.506804183
-Energy,Petroleum Refining,704073,4303298,50.36,42.43,6.112005431
-Energy,Pipelines,146108,533810,10.45,5.26,3.653530265
-Energy,Utilities: Gas and Electric,294521,3519990,21.06,34.7,11.95157561
-Engineering &  Construction,"Engineering, Construction",80187,208490,62.83,38.23,2.600047389
-Engineering &  Construction,Homebuilders,47447,336910,37.17,61.77,7.100765064
-Financials,Commercial Banks,658496,11763430,29.5,44.01,17.86408725
-Financials,Diversified Financials,361828,2419400,16.21,9.05,6.686602474
-Financials,"Insurance: Life, Health (Mutual)",167966,577070,7.52,2.16,3.435635783
-Financials,"Insurance: Life, Health (stock)",232266,2714630,10.4,10.15,11.68759095
-Financials,Insurance: Property and Casualty (Mutual),149482,402160,6.7,1.5,2.690357367
-Financials,Insurance: Property and Casualty (Stock),568080,6992820,25.45,26.16,12.30956907
-Financials,Real estate,40459,456360,1.81,1.71,11.27956697
-Financials,Securities,53729,1406120,2.41,5.26,26.17059688
-Food &  Drug Stores,Food and Drug Stores,384245,930430,100,100,2.421449856
-"Food, Beverages &  Tobacco",Beverages,60435,527330,13.01,10.16,8.72557293
-"Food, Beverages &  Tobacco",Food Consumer Products,213238,2611480,45.9,50.31,12.24678528
-"Food, Beverages &  Tobacco",Food Production,142664,426290,30.71,8.21,2.98806987
-"Food, Beverages &  Tobacco",Tobacco,48242,1625700,10.38,31.32,33.69885162
-Health Care,Health Care: Insurance and Managed Care,538417,2281370,38.11,23.36,4.237180475
-Health Care,Health Care: Medical Facilities,128091,759570,9.07,7.78,5.929924819
-Health Care,Health Care: Pharmacy and Other Services,327420,1471660,23.18,15.07,4.494716267
-Health Care,Medical Products and Equipment,97690,772390,6.92,7.91,7.906541099
-Health Care,Pharmaceuticals,321086,4480670,22.73,45.88,13.95473487
-"Hotels, Restaurants &  Leisure",Food Services,65399,1029910,49.09,53.32,15.74810012
-"Hotels, Restaurants &  Leisure","Hotels, Casinos, Resorts",67817,901550,50.91,46.68,13.29386437
-Household Products,"Home Equipment, Furnishings",44624,547940,24.47,19.85,12.27904267
-Household Products,Household and Personal Products,137743,2212820,75.53,80.15,16.0648454
-Industrials,Construction and Farm Machinery,118363,509030,27.65,19.5,4.300583797
-Industrials,"Electronics, Electrical Equip.",78214,332770,18.27,12.75,4.254609149
-Industrials,Industrial Machinery,199832,1282960,46.68,49.15,6.420192962
-Industrials,Miscellaneous,31657,485800,7.4,18.61,15.34573712
-Materials,"Building Materials, Glass",13418,32780,7.13,3.24,2.442987032
-Materials,Forest and Paper Products,7196,58200,3.83,5.76,8.08782657
-Materials,Metals,69495,335500,36.95,33.2,4.827685445
-Materials,Miscellaneous,6990,710,3.72,0.07,0.101573677
-Materials,"Packaging, Containers",90997,583450,48.38,57.73,6.411749838
-Media,Entertainment,173863,2181140,92.02,96.58,12.54516487
-Media,"Publishing, Printing",15079,77240,7.98,3.42,5.122355594
-Motor Vehicles &  Parts,Motor Vehicles and Parts,411868,1698320,100,100,4.12345703
-Retailing,"Automotive Retailing, Services",114747,305360,7.25,5.27,2.661158897
-Retailing,General Merchandisers,796288,1903830,50.28,32.85,2.390881189
-Retailing,Internet Services and Retailing,198330,585200,12.52,10.1,2.950637826
-Retailing,Specialty Retailers: Apparel,99029,753790,6.25,13.01,7.611810682
-Retailing,Specialty Retailers: Other,375249,2246660,23.7,38.77,5.987117887
-Technology,Computer Software,145460,3236050,4.75,18.73,22.24700949
-Technology,"Computers, Office Equipment",430214,5628200,14.05,32.58,13.08232647
-Technology,Entertainment,7017,27300,0.23,0.16,3.890551518
-Technology,Information Technology Services,139426,861220,4.55,4.98,6.176896705
-Technology,Internet Services and Retailing,185449,3251170,6.06,18.82,17.53134285
-Technology,Network and Other Communications Equipment,61396,1041450,2.01,6.03,16.96283145
-Technology,"Scientific,Photographic and  Control Equipment",20918,222500,0.68,1.29,10.63677216
-Technology,Semiconductors and Other Electronic Components,2071322,3009540,67.66,17.42,1.452956131
-Telecommunications,Telecommunications,459715,9956830,100,100,21.65870159
-Transportation,Airlines,157306,1329600,40.38,28.72,8.452315868
-Transportation,"Mail, Package, and Freight Delivery",126191,790700,32.39,17.08,6.265898519
-Transportation,Railroads,43199,2158700,11.09,46.63,49.97106415
-Transportation,Transportation Equipment,11152,69430,2.86,1.5,6.225789096
-Transportation,Transportation and Logistics,37171,133440,9.54,2.88,3.589895349
-Transportation,"Trucking, Truck Leasing",14520,147690,3.73,3.19,10.1714876
-Wholesalers,Wholesalers: Diversified,82966,313320,10,22.61,3.776486754
-Wholesalers,Wholesalers: Electronics and Office Equipment,111433,145410,13.44,10.49,1.304909677
-Wholesalers,Wholesalers: Food and Grocery,125908,189960,15.18,13.71,1.508720653
-Wholesalers,Wholesalers: Health Care,509026,737250,61.38,53.19,1.448354308
+,Sector,Industry,Revenues,Profits,Profit_Margin,Revenue_Percent,Profit_Percent
+0,Aerospace &  Defense,Aerospace and Defense,352746.0,2485190.0,7.0452676997046035,100.0,100.0
+1,Apparel,Apparel,68796.0,555390.0,8.072998430141288,100.0,100.0
+2,Business Services,"Advertising, marketing",23156.0,166740.0,7.200725513905684,11.06,5.78
+3,Business Services,Diversified Outsourcing Services,43889.0,277280.0,6.317756157579348,20.96,9.61
+4,Business Services,Financial Data Services,90126.0,1928080.0,21.3931606861505,43.05,66.85
+5,Business Services,Miscellaneous,6641.0,134600.0,20.268031922903177,3.17,4.67
+6,Business Services,Temporary Help,21034.0,54540.0,2.5929447561091568,10.05,1.89
+7,Business Services,Waste Management,24527.0,322740.0,13.158559954336038,11.71,11.19
+8,Chemicals,Chemicals,195173.0,1840880.0,9.432042341922294,100.0,100.0
+9,Energy,Energy,91928.0,605680.0,6.588634583587155,6.57,5.97
+10,Energy,"Mining, Crude-Oil Production",133640.0,1110360.0,8.308590242442383,9.56,10.95
+11,Energy,"Oil and Gas Equipment, Services",27924.0,70000.0,2.5068041827818366,2.0,0.69
+12,Energy,Petroleum Refining,704073.0,4303298.0,6.112005431254998,50.36,42.43
+13,Energy,Pipelines,146108.0,533810.0,3.6535302652832153,10.45,5.26
+14,Energy,Utilities: Gas and Electric,294521.0,3519990.0,11.95157560920953,21.06,34.7
+15,Engineering &  Construction,"Engineering, Construction",80187.0,208490.0,2.6000473892276803,62.83,38.23
+16,Engineering &  Construction,Homebuilders,47447.0,336910.0,7.100765064176871,37.17,61.77
+17,Financials,Commercial Banks,658496.0,11763430.0,17.86408725337739,29.5,44.01
+18,Financials,Diversified Financials,361828.0,2419400.0,6.686602474103718,16.21,9.05
+19,Financials,"Insurance: Life, Health (Mutual)",167966.0,577070.0,3.435635783432361,7.52,2.16
+20,Financials,"Insurance: Life, Health (stock)",232266.0,2714630.0,11.687590951753593,10.4,10.15
+21,Financials,Insurance: Property and Casualty (Mutual),149482.0,402160.0,2.6903573674422336,6.7,1.5
+22,Financials,Insurance: Property and Casualty (Stock),568080.0,6992820.0,12.3095690747782,25.45,26.16
+23,Financials,Real estate,40459.0,456360.0,11.279566969030377,1.81,1.71
+24,Financials,Securities,53729.0,1406120.0,26.170596884364123,2.41,5.26
+25,Food &  Drug Stores,Food and Drug Stores,384245.0,930430.0,2.421449856211532,100.0,100.0
+26,"Food, Beverages &  Tobacco",Beverages,60435.0,527330.0,8.725572929593778,13.01,10.16
+27,"Food, Beverages &  Tobacco",Food Consumer Products,213238.0,2611480.0,12.24678528217297,45.9,50.31
+28,"Food, Beverages &  Tobacco",Food Production,142664.0,426290.0,2.9880698704648685,30.71,8.21
+29,"Food, Beverages &  Tobacco",Tobacco,48242.0,1625700.0,33.698851623067036,10.38,31.32
+30,Health Care,Health Care: Insurance and Managed Care,538417.0,2281370.0,4.237180475356461,38.11,23.36
+31,Health Care,Health Care: Medical Facilities,128091.0,759570.0,5.92992481907394,9.07,7.78
+32,Health Care,Health Care: Pharmacy and Other Services,327420.0,1471660.0,4.494716266568933,23.18,15.07
+33,Health Care,Medical Products and Equipment,97690.0,772390.0,7.9065410993960485,6.92,7.91
+34,Health Care,Pharmaceuticals,321086.0,4480670.0,13.954734868539893,22.73,45.88
+35,"Hotels, Restaurants &  Leisure",Food Services,65399.0,1029910.0,15.748100123855105,49.09,53.32
+36,"Hotels, Restaurants &  Leisure","Hotels, Casinos, Resorts",67817.0,901550.0,13.293864370290635,50.91,46.68
+37,Household Products,"Home Equipment, Furnishings",44624.0,547940.0,12.279042667622804,24.47,19.85
+38,Household Products,Household and Personal Products,137743.0,2212820.0,16.06484540049222,75.53,80.15
+39,Industrials,Construction and Farm Machinery,118363.0,509030.0,4.300583797301521,27.65,19.5
+40,Industrials,"Electronics, Electrical Equip.",78214.0,332770.0,4.254609149257166,18.27,12.75
+41,Industrials,Industrial Machinery,199832.0,1282960.0,6.420192962088154,46.68,49.15
+42,Industrials,Miscellaneous,31657.0,485800.0,15.345737119752345,7.4,18.61
+43,Materials,"Building Materials, Glass",13418.0,32780.0,2.442987032344612,7.13,3.24
+44,Materials,Forest and Paper Products,7196.0,58200.0,8.087826570316842,3.83,5.76
+45,Materials,Metals,69495.0,335500.0,4.8276854449960425,36.95,33.2
+46,Materials,Miscellaneous,6990.0,710.0,0.10157367668097282,3.72,0.07
+47,Materials,"Packaging, Containers",90997.0,583450.0,6.411749837906744,48.38,57.73
+48,Media,Entertainment,173863.0,2181140.0,12.545164871191686,92.02,96.58
+49,Media,"Publishing, Printing",15079.0,77240.0,5.122355593872273,7.98,3.42
+50,Motor Vehicles &  Parts,Motor Vehicles and Parts,411868.0,1698320.0,4.123457029922208,100.0,100.0
+51,Retailing,"Automotive Retailing, Services",114747.0,305360.0,2.6611588974003677,7.25,5.27
+52,Retailing,General Merchandisers,796288.0,1903830.0,2.3908811887156407,50.28,32.85
+53,Retailing,Internet Services and Retailing,198330.0,585200.0,2.9506378258458126,12.52,10.1
+54,Retailing,Specialty Retailers: Apparel,99029.0,753790.0,7.611810681719496,6.25,13.01
+55,Retailing,Specialty Retailers: Other,375249.0,2246660.0,5.9871178870563275,23.7,38.77
+56,Technology,Computer Software,145460.0,3236050.0,22.247009487144233,4.75,18.73
+57,Technology,"Computers, Office Equipment",430214.0,5628200.0,13.08232647008233,14.05,32.58
+58,Technology,Entertainment,7017.0,27300.0,3.890551517742625,0.23,0.16
+59,Technology,Information Technology Services,139426.0,861220.0,6.176896705062184,4.55,4.98
+60,Technology,Internet Services and Retailing,185449.0,3251170.0,17.531342848977346,6.06,18.82
+61,Technology,Network and Other Communications Equipment,61396.0,1041450.0,16.962831454817902,2.01,6.03
+62,Technology,"Scientific,Photographic and  Control Equipment",20918.0,222500.0,10.636772157950091,0.68,1.29
+63,Technology,Semiconductors and Other Electronic Components,2071322.0,3009540.0,1.4529561313982085,67.66,17.42
+64,Telecommunications,Telecommunications,459715.0,9956830.0,21.658701586852725,100.0,100.0
+65,Transportation,Airlines,157306.0,1329600.0,8.45231586843477,40.38,28.72
+66,Transportation,"Mail, Package, and Freight Delivery",126191.0,790700.0,6.265898518911809,32.39,17.08
+67,Transportation,Railroads,43199.0,2158700.0,49.97106414500335,11.09,46.63
+68,Transportation,Transportation Equipment,11152.0,69430.0,6.225789096126255,2.86,1.5
+69,Transportation,Transportation and Logistics,37171.0,133440.0,3.5898953485243874,9.54,2.88
+70,Transportation,"Trucking, Truck Leasing",14520.0,147690.0,10.171487603305785,3.73,3.19
+71,Wholesalers,Wholesalers: Diversified,82966.0,313320.0,3.7764867536099125,10.0,22.61
+72,Wholesalers,Wholesalers: Electronics and Office Equipment,111433.0,145410.0,1.3049096766666965,13.44,10.49
+73,Wholesalers,Wholesalers: Food and Grocery,125908.0,189960.0,1.5087206531753343,15.18,13.71
+74,Wholesalers,Wholesalers: Health Care,509026.0,737250.0,1.448354308031417,61.38,53.19
