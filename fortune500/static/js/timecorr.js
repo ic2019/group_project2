@@ -257,12 +257,12 @@ function rollingCorrelation(arr1, arr2, windowPeriod = 10) {
   
       }).catch(function(err) {
         document.getElementById("error").innerHTML = `No data in Quandl for ${stock2}. Reset to another stock!`;
-        // alert('No data in Quandl. Reset to try another stock!')
+        
       });
   
     }).catch(function(err) {
       document.getElementById("error").innerHTML = `No data in Quandl for ${stock1}. Reset to another stock!`;
-      // alert('No data in Quandl. Reset to try another stock!')
+     
     });
   }
 

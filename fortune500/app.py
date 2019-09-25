@@ -130,7 +130,7 @@ def barData():
      emp_cnt  = [result[3] for result in results]
      profitmgn   = [(result[2]/result[1]) for result in results]
      revenue_pe  = [(result[1]/result[3]) for result in results]
-     profit_pe  = [(result[2]/result[3] * 100) for result in results]
+     profit_pe  = [(result[2]/result[3]) for result in results]
      # Generate the plot trace
      barData = {
         "ticks": ticks,
