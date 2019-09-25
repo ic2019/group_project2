@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/reset.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Bootswatch link for lumen theme-->
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lumen/bootstrap.min.css" rel="stylesheet" integrity="sha384-iqcNtN3rj6Y1HX/R0a3zu3ngmbdwEa9qQGHdkXwSRoiE+Gj71p0UNDSm99LcXiXV" crossorigin="anonymous">
+    
+    
+    <link rel="stylesheet" href="css/style.css">
+    <title>Latitude - Latitude Analysis Dashboard with Attitude</title>
+  </head>
+  <body>
+	  <div class="container bg-light font-weight-bold">
+	  <!-----Code for nav bar-->
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="nav">
+				<a class="navbar-brand bg-info text-white font-weight-bold" href="./index.html">Latitude</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavDropdown">
+				  <ul class="navbar-nav ml-auto">
+
+					<li class="nav-item dropdown active">
+					  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Plots
+					  </a>
+					  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<a class="dropdown-item" href="./html/temperature.html">Temperature</a>
+						<a class="dropdown-item" href="./html/cloudiness.html">Cloudiness</a>
+                        <a class="dropdown-item" href="./html/humidity.html">Wind Speed</a>
+                        <a class="dropdown-item" href="./html/windspeed.html">Humidity</a>
+					  </div>
+					</li>
+					<li class="nav-item">
+							<a class="nav-link" href="./html/comparisons.html">Comparison<span class="sr-only">(current)</span></a>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link" href="./html/data.html">Data</a>
+						  </li>
+
+				  </ul>
+				</div>
+			  </nav>
+        <!----End of code for nav bar-->
+        <!-----------Start of Jumbotron-->
+        <div class=" container jumbotron">
+            <div class="container row">
+              <div class="col img-responsive">
+                <h1>Summary: Latitude vs. X</h1>
+                <p class="lead">The purpose of this project was to analyze how weather changes as you get closer to the equator. To accomplish this analysis, we first pulled data from OpenWeatherMap API to assemble a dataset on over 500 cities. <br> After assembling the dataset, we used matplotlib to plot various aspects of weather vs latitude. Factors we looked at included: temperature, cloudiness, wind speed, and humidity. This site provides the source data and visualizations created as part of the analysis, as well as explanations and descriptions of any trends and correlations witnessed.
+                   </p>
+                <ul>
+                    <li><a href="./html/temperature.html">Temperature (F) vs. Latitude</a></li>
+                    <li><a href="./html/humidity.html">Humidity (%) vs. Latitude</a></li>
+                    <li><a href="./html/cloudiness.html">Cloudiness (%) vs. Latitude</a></li>
+                    <li><a href="./html/windspeed.html">Wind Speed (mph) vs. Latitude</a></li>
+                </ul>
+                <hr class="my-4">
+                <p></p>
+                <p class="lead">
+                  <a class="btn btn-primary btn-lg" href="https://www.shsu.edu/~dl_www/bkonline/131online/f02latitude/02index.htm" role="button">Learn more?</a>
+                </p>
+              </div>
+              <div class="col img-responsive">
+                  <h1>Visualizations</h1>
+                    
+                      <div class="row mx-md-n5">
+                       <!-- <div class="container  bg-light"> -->
+                         <div class="col-md-6 img-responsive">
+                            <a href="html/temperature.html"><img src="./Resources/assets/images/Fig1.png" alt="Temperature" class="img-thumbnail w-100"></a>
+                          </div>
+                          <div class="col-md-6 img-responsive">
+                              <a href="html/humidity.html"> <img src="./Resources/assets/images/Fig2.png" alt="Humidity" class="img-thumbnail w-100"></a>
+                          </div>
+                      <!-- </div> -->
+                    </div>
+                   
+                    <div class="row mx-md-n5 top5">
+                      <!-- <div class="container bg-light row"> -->
+                      <div class="col-sm-6 img-responsive">
+                          <a href="html/cloudiness.html"> <img src="./Resources/assets/images/Fig3.png" alt="Cloudiness" class="img-thumbnail w-100"></a>
+                      </div>
+                      <div class="col-sm-6 img-responsive">
+                      <a href="html/windspeed.html"><img src="./Resources/assets/images/Fig4.png" alt="Windspeed" class="img-thumbnail w-100"></a>
+                      </div>                   <!-- </div> -->
+                    </div>
+                   
+              </div>
+            </div>
+        </div>
+    <!---Beginning of footer-->
+    <div class="container-fluid bg-dark" id="footer">
+        <!-- Footer Links -->
+
+      <div class="footer">
+              <p class="text-center text-white">Copyright @myweatherapi.com</p>
+      </div>
+            
+
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

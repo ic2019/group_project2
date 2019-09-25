@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <!-- <meta charset="utf-8"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <!-- Bootswatch link for Dark theme-->
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/darkly/bootstrap.min.css" rel="stylesheet" integrity="sha384-w+8Gqjk9Cuo6XH9HKHG5t5I1VR4YBNdPt/29vwgfZR485eoEJZ8rJRbm3TR32P6k" crossorigin="anonymous">
+    <!-- Satheesh library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chartist-plugin-tooltip@0.0.11/chartist-plugin-tooltip.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap" rel="stylesheet">   
+     <!--End of Satheesh's libraries  -->
+    <title>A Peek into US Fortune 500 Data</title>
+  </head>
+  <body>
+	  <div class="container">
+	  <!-----Code for nav bar-->
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="nav">
+				<a class="navbar-brand" href="/">US Fortune500 Dashboard</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavDropdown">
+				  <ul class="navbar-nav ml-auto">
+
+					<li class="nav-item dropdown active">
+					  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Visualizations
+					  </a>
+					  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<a class="dropdown-item" href="/bar">Revenue Vs Profit</a>
+						<a class="dropdown-item" href="/bar_pe">Worker Profitability</a>
+            <a class="dropdown-item" href="/timesrs">Stock Analysis</a>
+            <!-- <li class="nav-item dropdown"></li> -->
+            <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
+              <!-- Stock Analysis -->
+              <!-- </a> -->
+              <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"></div> -->
+              <!-- <a class="dropdown-item" href="/timesrs">Stock Prices Trend</a> -->
+              <!-- <a class="dropdown-item" href="/timecorr">Stock Correlation</a> -->
+            <!-- </li> -->
+            <a class="dropdown-item" href="/pie">Sector Analysis</a>
+            <a class="dropdown-item" href="/map">Map</a>
+					  </div>
+					</li>
+					<li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  API
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="/api/fortune500">A Sample Fortune 500 Data</a>
+                  <a class="dropdown-item" href="/api/bar">Top 10 Revenue & Profit Data</a>
+                  <a class="dropdown-item" href="/api/timesrs">A Sample Stock Data</a>
+                  <a class="dropdown-item" href="/api/pie">Aggregated Sector Data</a>
+                  <a class="dropdown-item" href="/api/map">Map Data</a>
+
+							
+					</li>
+					<li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Others
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="/meta">Fortune500 Metadata</a>
+                  <a class="dropdown-item" href="/logdia">Logical Diagram</a>
+
+         </li>
+
+				  </ul>
+				</div>
+			  </nav>
+        <!----End of code for nav bar-->
+        <!-----------Start of Jumbotron-->
+        <div class="container">
+            <!-- <div class="container row"> -->
+              <h3 class="text-center">US - Fortune 500 Financial Data Analysis</h3>
+              <!-- <div class="col-md-12 img-responsive"> -->
+ 
+                   
+              <!-- </div> -->
+            <!-- </div> -->
+            <!-- <div class="container jumbotron"> -->
+              <section class="section">
+                <h5 class="title text-center">
+                  {% block title %}{% endblock %}
+
+                </h5>
+                  
+                  {% block body %}{% endblock %}
+
+              </section> 
+            <!-- </div> -->
+        </div>
+        <div id="footer">
+        {% block footer %}
+                <!-- Footer section -->  
+        <footer class="page-footer font-small blue">
+            <div class="footer-copyright text-center py-3">© Copyright | Cletus - Indu - Jake - Mythili - Satheesh | 2019</div>
+        </footer>
+        {% endblock %}
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

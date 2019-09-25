@@ -1,0 +1,52 @@
+{% extends "nav.html" %}
+{% block title %}Sector Analysis by Revenue and Profit{% endblock %}
+{% block body %}
+<!-- <div class="row"> -->
+                <!-- <div class="col-md-12"> -->
+                    <form class="form-inline" id="form">
+                        <div class="form-group">
+                                <!-- <h5>Select the sector</h5> -->
+                                 <div class="container">
+                                    <div class="row">
+                                            <div class="col-md-12">
+                                                <p>Select the sector</p>
+                                                <select required multiple id="selDataset1">
+                                                    {% for value in data.Sector | unique %}                                               
+                                                    
+                                                         <option>{{ value }}</option>                                                    
+                                                    {% endfor %}
+                                                </select>
+                                            
+                                                
+                                            </div>
+                                    
+​
+                                    </div>
+                                    
+                                
+                                <div class="row">
+​
+                                            <div class="col-md-12">
+                                                <div id="pie1"></div>
+                                            </div>
+                                
+                                
+                                            <div class="col-md-12">
+                                                <div id="pie2"></div>
+                                            </div>
+                                </div>
+                            </div>
+​
+                                
+​
+                        </div>
+                    </form>
+                    
+                <!-- </div> -->
+            <!-- </div> -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+            <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+            
+             <script var src="../static/app.js"></script>
+{% endblock %}
