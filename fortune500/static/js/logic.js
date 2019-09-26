@@ -1,7 +1,7 @@
 // Create a map object
 var myMap = L.map("map", {
    center: [37.09, -95.71], //[15.5994, -28.6731],
-   zoom: 6
+   zoom: 3
    // layers: [
    //   lightMap
    // ]
@@ -15,9 +15,9 @@ var myMap = L.map("map", {
    accessToken: API_KEY
  }).addTo(myMap);
  
- L.layers = {
-   lightMap
- }
+//  L.layers = {
+//    lightMap
+//  }
  // Adjust the radius based on revenue
  function markerSize(rev) {
    return rev / 5;
@@ -57,6 +57,7 @@ var myMap = L.map("map", {
  
    return color
  }
+
  //path for the  data
  var path = "/map/data"
    

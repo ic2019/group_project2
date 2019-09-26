@@ -146,7 +146,8 @@ def mapData():
       # mapData.column =  ['ticks', 'revenue', 'profit', 'revenue_pe', 'profit_pe' ,'emp_cnt', 'lat', 'long','rank','comp','sector']
       # return jsonify(mapData.to_dict(orient="records"))
       
-      return render_template('map.html')
+      # return render_template('map.html')
+      return render_template('maps.html')
       
    except exc.NoResultFound:
       abort(404)
