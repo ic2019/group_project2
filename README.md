@@ -85,13 +85,15 @@ In this project, we have created a web application using Flask, Python, PostgreS
 
   1. Clone this repo.
 
-  2. Change to project folder _cd group2_project_
+  2. Create a local postgresql database named _fortune500_db_ and run [SQL Schema](fortune500/misc/Scripts/schema.sql) to create a schema for this project.
 
-  3. Update _fortune500\config.py_  with your Quandl API key and postgres local username and password.
+  3. Change to project folder _cd group2_project_
 
-  4. Update _fortune500\static\js\config.js_ with your Quandl API key and Mapbox API Key.
+  4. Update _fortune500\config.py_  with your Quandl API key and postgres local username and password.
 
-  5. Run _python fortune500\app.py_
+  5. Update _fortune500\static\js\config.js_ with your Quandl API key and Mapbox API Key.
+
+  6. Run _python fortune500\app.py_
  
 
   
