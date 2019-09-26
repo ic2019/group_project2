@@ -1,10 +1,7 @@
 // Create a map object
 var myMap = L.map("map", {
    center: [37.09, -95.71], //[15.5994, -28.6731],
-   zoom: 3
-   // layers: [
-   //   lightMap
-   // ]
+   zoom: 4
  });
  
  // Adding tile layer
@@ -15,9 +12,6 @@ var myMap = L.map("map", {
    accessToken: API_KEY
  }).addTo(myMap);
  
-//  L.layers = {
-//    lightMap
-//  }
  // Adjust the radius based on revenue
  function markerSize(rev) {
    return rev / 5;
@@ -66,7 +60,7 @@ var myMap = L.map("map", {
    console.log(fortune500)
    
      fortune500.forEach(company => {
-       console.log(company)
+      //  console.log(company)
    //    for (var i = 0; i < companies.length)
        L.circle([company.lat, company.long], {
          fillOpacity: 0.75,
@@ -76,8 +70,8 @@ var myMap = L.map("map", {
        })
        .bindPopup("<h1>" + company.comp + "</h1> <hr> <h3>Rank: " + company.rank + "</h3>" + "<h3>Revenue: " 
        + company.revenue + "</h3>" + "<h3>Employee Count: " + company.emp_cnt)
-       .addTo()
-       // .addTo(myMap);  
+//       .addTo()
+       .addTo(myMap);  
      })
    // }
  });
