@@ -4,13 +4,9 @@
 
 ![cover](fortune500/static/img/cover.png)
 
-[Kaggle](https://www.kaggle.com/Eruditepanda/fortune-1000-2018)
-[Quandl](https://www.quandl.com/)
-[DataPub](https://datahub.io/core/s-and-p-500-companies)
-
 ## Background
 
-In this project, we have created a web application using Flask, Python, PostgreSQL  and different JavaScript libraries to render various visualizations and charts that would allow individuals visiting our website the opportunity to analyze US Fortune 500 companies, their stock price, and the financials associated with them. We hope that our website arms potential investors with the data they need to make financial investment decisions.
+In this project, we have created a web application using Flask, Python, PostgreSQL  and different JavaScript libraries to render various visualizations and interactive charts, that would allow individuals visiting our website the opportunity to analyze US Fortune 500 companies, their stock price, and the financials associated with them. We hope that our website arms potential investors with the data they need to make financial investment decisions.
 
 #### Following analysis are done.
 
@@ -78,6 +74,15 @@ In this project, we have created a web application using Flask, Python, PostgreS
   5. Map of US with all Fortune 500 companies and their financial data.
 
   ![map](fortune500/static/img/map.gif)
+
+  ### Resources
+
+  [Kaggle](https://www.kaggle.com/Eruditepanda/fortune-1000-2018)
+
+  [Quandl](https://www.quandl.com/)
+
+  [DataPub](https://datahub.io/core/s-and-p-500-companies)
+ 
 
   
 
