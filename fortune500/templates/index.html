@@ -7,13 +7,13 @@
       <div class="col img-responsive">
         <h2>Welcome investors, let's have "A Peek into US Fortune 500 Financial Data".</h2>
         <hr>
-        <img class="img-fluid float-left" src="/static/img/Fig1.jpg" width="250" height="250">
+        <img class="img-fluid float-left" src=" {{ url_for('static', filename='img/Fig1.jpg') }}" width="250" height="250">
         <br>
-        <p>
+        <p class="text-justify">
             We are a one stop shop where investors gain the ability to view different variables about their favorite Fortune 500 companies.         
         </p>
            <br>
-          <p class="text-left">
+          <p class="text-justify">
               While navigating through our website you will be able to find a stock analysis on Fortune 500 companies, revenue and profit statistics for these companies 
               and even the profitability per employee. This allows investors to dive deep into the worker productivity of the Fortune 500 Companies that interest them. 
               Additionally, you will be able to find a sector analysis of the different industries that the Fortune 500 companies consist of. 
@@ -28,37 +28,44 @@
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-              <img src="{{ url_for('static', filename='img/bar.gif') }}" class="d-block w-100" alt="...">
+              <a href="/pie"><img src="{{ url_for('static', filename='img/bar.gif') }}" class="d-block w-100" alt="..."></a>
+              <br>
               <h5>Top 10 - Revenue and Profit</h5>
             <p>This chart shows us the revenue and the profit of the top 10 in the Fortune 500 Companies. This is a bar chart that shows revenue and profit side by side to show investors how the top 10 companies stack up versus each other.</p>
           </div>
           <div class="carousel-item">
-              <img src="{{ url_for('static', filename='img/bar_pm.gif') }}" class="d-block w-100" alt="...">
+              <a href="/bar"><img src="{{ url_for('static', filename='img/bar_pm.gif') }}" class="d-block w-100" alt="..."></a>
+              <br>
               <h5>Top 10 - Profitability Margin</h5>
-              <p>This chart shows us the profitability margin the top 10 companies in the Fortune 500 Companies.</p>
+              <p>This chart shows us the profitability margin of the top 10 companies in the Fortune 500 Companies.</p>
           </div>
           <div class="carousel-item">
-            <img src="/static/img/bar_pe.gif" class="d-block w-100" alt="...">
+            <a href="bar_pe"><img src="{{ url_for('static', filename='img/bar_pe.gif') }}" class="d-block w-100" alt="..."></a>
             <h5>Top 10 - Per Employee Revenue and Profit</h5>
+            <br>
             <p>This chart shows the profit per employee of the top 10 in the Fortune 500 companies. This chart allows investors to drill down into the worker productivity of the top 10 companies of the Fortune 500.</p>
           </div>
           <div class="carousel-item">
-            <img src="/static/img/stock.gif" class="d-block w-100" alt="...">
+            <a href="/timesrs"><img src="{{ url_for('static', filename='img/stock.gif') }}" class="d-block w-100" alt="..."></a>
+            <br>
             <h5>Time Series Stock Analysis</h5>
             <p>This pie chart allows investors to look at different sectors of the Fortune 500. The sectors that can be chosen consist of the industries in the Fortune 500. This means that investors that have a heavy interest in certain types of industries can drill down into that data.</p>
           </div>
           <div class="carousel-item">
-                <img src="/static/img/sector.gif" class="d-block w-100" alt="...">
+                <a href="/sector"><img src="{{ url_for('static', filename='img/sector.gif') }}" class="d-block w-100" alt="..."></a>
+                <br>
                 <h5>Sector Analysis</h5>
             <p>This pie chart allows investors to look at different sectors of the Fortune 500. The sectors that can be chosen consist of the industries in the Fortune 500. This means that investors that have a heavy interest in certain types of industries can drill down into that data.</p>
           </div>
           <div class="carousel-item">
-                    <img src="/static/img/map.gif" class="d-block w-100" alt="...">
+                    <a href="/map"><img src="{{ url_for('static', filename='img/map.gif') }}" class="d-block w-100" alt="..."></a>
+                    <br>
                     <h5>Map of Fortune 500 companies</h5>
             <p>This is a map of the Fortune 500 companies. This map shows all of the Fortune 500 companies. The map shows where the Fortune 500 companies are located. On this map when an investor is looking to drill down into a certain Fortune 500 company, a pop up will show with the Fortune 500 Rank, company revenue and employee count etc.</p>
           </div>
           <div class="carousel-item">
               <img src="/static/img/team.jpg" class="d-block w-100" alt="...">
+              <br>
               <h5>Team who made this!</h5>
           </div>
         </div>
@@ -67,7 +74,7 @@
   <!-- end of carousal   -->
 </div>
 </div>
-<p class="card-text text-dark"><marquee direction="left">Fortune 500 companies represent two-thirds of the U.S. GDP with $13.7 trillion in revenues, $1.1 trillion in profits, $22.6 trillion in market value, and employ 28.7 million people worldwide.<a href="https://fortune.com/fortune500/"><button type="button" class="btn btn-primary btn-sm">(Read More..)</button></a></marquee></p>
+<p class="card-text text-dark"><marquee direction="left">Fortune 500 companies represent two-thirds of the U.S. GDP with $13.7 trillion in revenues, $1.1 trillion in profits, $22.6 trillion in market value, and employ 28.7 million people worldwide.<a href="https://fortune.com/fortune500/">(Read More..)</a></marquee></p>
 </div>
 
 <!-- Styles -->

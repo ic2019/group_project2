@@ -99,7 +99,7 @@ def map():
 @app.route("/api/fortune500")
 def sampleData():
    try:
-      results = Fortune500.query.first()
+      results = Fortune500.query.all()
       sampleData = [{
          "Rank" : results.Rank,
          "Title": results.Title,
