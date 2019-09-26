@@ -7,4 +7,4 @@ db_user = os.environ.get('DB_USERNAME', default='postgres')
 
 SQLALCHEMY_DATABASE_URI = f"postgres://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
 
-apiKey = "4CVJgYzyLyypcSqr9Ckc"
+apiKey = "Enter Quandl api key here"
