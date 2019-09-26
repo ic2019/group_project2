@@ -33,7 +33,8 @@ drop table sector_industry;
 
 -------------Creating sector_industry table--------------
 create table sector_industry (
-		"Sector" varchar primary key,
+	    "Id" serial primary key,
+		"Sector" varchar not null,
 		"Industry" varchar not null,
 		"Revenues" numeric not null,
 		"Profits" numeric not null,

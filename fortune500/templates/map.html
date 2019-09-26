@@ -1,0 +1,118 @@
+
+{% extends "nav.html" %}
+{% block title %}Revenue and Profit by Map{% endblock %}
+{% block body %}
+<!-- HTML part to create a plotly map -->
+<head>
+  <!-- Plotly.js -->
+          <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+          <!-- Plotly chart will be drawn inside this DIV -->
+          <div class="container">
+              <div class="row">
+                <div id="gd" width="1000" height="1000"></div>
+              </div>
+          </div>
+  
+<!--End of html section  -->
+<!-- Beginning of JavaScript section -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/config.js') }}"></script>
+<script>
+/**
+ *  Function to determine circle marker size based on profit margin of each company
+ **/
+function getSize(pperc) {
+    arr = [];
+    for (i=0; i < pperc.length; i++){
+      arr.push(pperc[i]);
+      
+    }
+    return arr;
+}
+
+/**
+ * Function to get a random color for each marker
+ * */
+function getColor() {
+    arr = [];
+    for (i=0; i < 500; i++){
+      arr.push("rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')");
+      
+    }
+    console.log(arr[1]);
+    return arr;
+}
+
+/**
+ * Main program
+ **/
+Plotly.d3.json('/api/map', function(err, rows){
+
+      function unpack(rows, key) {
+          
+          return rows.map(function(row) { return row[key]; });
+        }
+
+var text1 = [];
+var comp = unpack(rows, 'comp');
+var emp_cnt = unpack(rows, 'emp_cnt');
+var rank = unpack(rows, 'rank');
+var sector = unpack(rows, 'sector');
+var profit = unpack(rows, 'profit');
+var revenue = unpack(rows, 'revenue');
+var profit_mg = unpack(rows, 'profit_mg');
+for (var i =0; i < emp_cnt.length; i++) {
+    text1.push(`Company: ${comp[i]}<br>Rank: ${rank[i]}<br>Employees:${emp_cnt[i]}<br>Sector:${sector[i]}<br>Revenues:${revenue[i]} M$<br>Profits: ${profit[i]} M$ <br> Profit_Mg: ${Math.round(profit_mg[i],2)} %`);
+}
+
+scl = [[0, 'rgb(150,0,90)'],[0.125, 'rgb(0, 0, 200)'],[0.25,'rgb(0, 25, 255)'],[0.375,'rgb(0, 152, 255)'],[0.5,'rgb(44, 255, 150)'],[0.625,'rgb(151, 255, 0)'],[0.75,'rgb(255, 234, 0)'],[0.875,'rgb(255, 111, 0)'],[1,'rgb(255, 0, 0)']];
+
+var data = [{
+        type: 'scattermapbox', 
+        text: text1,
+        lon: unpack(rows, 'long'),
+         lat: unpack(rows, 'lat'),
+         z: unpack(rows, 'emp_cnt'),
+        marker: {color: unpack(rows, 'rank'), 
+        colorscale: scl,
+        opacity: 0.5,
+        size: getSize(unpack(rows, 'profit_mg') ),
+        /*
+        colorbar:{
+            thickness: 10,
+            titleside: 'right',
+            outlinecolor: 'rgba(68,68,68,0)',
+            ticks: 'outside',
+            ticklen: 3,
+            shoticksuffix: 'last',
+            ticksuffix: '%',
+            dtick: 0.1
+          } */
+       }, 
+       name: 'Profitability Margin'       
+  
+    }];
+
+var layout = {
+      title: 'Fortune 500 Companies by Profit Margin',
+      height: 800,
+      width: 1100,
+      dragmode: 'zoom', 
+      mapbox: { style: "light",
+      center: {lat: 39.015697, lon: -94.565559}, zoom:3},
+      domain: {
+           x: [0,1],
+           y: [0,1]
+      },
+      margin: {r: 0, t: 0, b: 0, l: 0}}; 
+
+  var config = {
+    mapboxAccessToken: API_KEY
+  };
+
+Plotly.newPlot('gd', data, layout, config);
+  });
+</script>
+</body>
+{% endblock %}

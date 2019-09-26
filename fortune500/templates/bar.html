@@ -1,0 +1,31 @@
+{% extends "nav.html" %}
+{% block title %}Revenue Profit Analysis Chart{% endblock %}
+{% block body %}
+
+
+<div class="container">
+    <!-- Beginning of bar chart  -->
+      <div class="row">    
+            <!-- <div class="col-lg-6 col-md-12 mt-5"> -->
+              <div class="col-md-6">
+              <h6>Revenue and Profit Analysis</h6>
+             <canvas id="barchart" width="500" height="450"></canvas>
+            </div>
+            
+              <div class="col-md-6">
+              <h6>Profit Margin Analysis</h6>
+
+              <canvas id="barchart_pr" width="500" height="450"></canvas>
+            </div>
+        </div>
+</div>
+
+    <!-- End of bar chart -->
+    <!-- Beginning of linking external files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="{{ url_for('static', filename='js/bar.js') }}"></script>  
+    
+{% endblock %}

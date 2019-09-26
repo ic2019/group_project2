@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <!-- Required meta tags -->
+    <!-- <meta charset="utf-8"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+      <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <title>A Peek into US Fortune 500 Data</title>
+  </head>
+  <body>
+	  <div class="container">
+	  <!-----Code for nav bar-->
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="nav">
+				<a class="navbar-brand" href="/">US Fortune 500 Dashboard</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavDropdown">
+				  <ul class="navbar-nav ml-auto">
+           <li class="nav-item">
+             <a class="nav-link active" href="/">Home</a><span class="sr-only">(current)</span></a>
+           </li>
+					<li class="nav-item dropdown">
+					  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Visualizations
+					  </a>
+					  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<a class="dropdown-item" href="/bar">Revenue Vs Profit</a>
+						<a class="dropdown-item" href="/bar_pe">Worker Profitability</a>
+            <a class="dropdown-item" href="/timesrs">Stock Analysis</a>
+            <a class="dropdown-item" href="/pie">Sector Analysis</a>
+            <a class="dropdown-item" href="/map">Map</a>
+					  </div>
+					</li>
+					<li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  API
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="/api/fortune500">A Sample Fortune 500 Data</a>
+                  <a class="dropdown-item" href="/api/bar">Top 10 Revenue & Profit Data</a>
+                  <a class="dropdown-item" href="/api/timesrs">A Sample Stock Data</a>
+                  <a class="dropdown-item" href="/api/pie">Aggregated Sector Data</a>
+                  <a class="dropdown-item" href="/api/map">Map Data</a>
+
+							
+					</li>
+					<li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              References
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="https://github.com/ic2019/group_project2">GitHub</a>
+                  <a class="dropdown-item" href="https://fortune.com/fortune500">Fortune500</a>
+                  <a class="dropdown-item" href="https://datahub.io/core/s-and-p-500-companies">S&P Data</a>
+                  <a class="dropdown-item" href="https://www.quandl.com/tools/api">Quandl API</a>
+                  <a class="dropdown-item" href="https://www.investopedia.com/">Investopedia</a>
+
+
+
+          </li>
+
+				  </ul>
+				</div>
+			  </nav>
+        <!----End of code for nav bar-->
+        <!-----------Start of Jumbotron-->
+        <div class="container">
+            <!-- <div class="container row"> -->
+              <h3 class="text-center">US - Fortune 500 Financial Data Analysis</h3>
+              <!-- <div class="col-md-12 img-responsive"> -->
+ 
+                   
+              <!-- </div> -->
+            <!-- </div> -->
+            <!-- <div class="container jumbotron"> -->
+              <section class="section">
+                <h5 class="title text-center">
+                  {% block title %}{% endblock %}
+
+                </h5>
+                  
+                  {% block body %}{% endblock %}
+
+              </section> 
+            <!-- </div> -->
+        </div>
+        <div class="footer">
+          {% block footer %}
+                <!-- Footer section -->  
+        <footer class="page-footer font-small blue">
+            <div class="footer-copyright text-center py-3">© Copyright | Cletus - Indu - Jake - Mythili - Satheesh | 2019</div>
+
+        </footer>
+        {% endblock %}
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/yeti/bootstrap.min.css" rel="stylesheet" integrity="sha384-w6tc0TXjTUnYHwVwGgnYyV12wbRoJQo9iMlC2KdkdmVvntGgzT9jvqNEF/uKaF4m" crossorigin="anonymous"> -->
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/darkly/bootstrap.min.css" rel="stylesheet" integrity="sha384-w+8Gqjk9Cuo6XH9HKHG5t5I1VR4YBNdPt/29vwgfZR485eoEJZ8rJRbm3TR32P6k" crossorigin="anonymous"> -->
+  </body>
+</html>
