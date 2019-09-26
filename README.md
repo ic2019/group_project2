@@ -36,20 +36,20 @@ In this project, we have created a web application using Flask, Python, PostgreS
 
   **Original Data Schema**
    
-  ![original_schema](fortune500/static/img/original_schema.png)
+  ![original_schema](fortune500/static/img/etl/original_schema.png)
 
   **New Data Schema**
   
   
-  ![new_schema](fortune500/static/img/new_schema.png)
+  ![new_schema](fortune500/static/img/etl/new_schema.png)
 
   ### Load
 
   **PostgreSQL tables created**
 
-  _[SQL Query](fortune500/misc/Scripts/schema.sql) for schema creation.
+  _[SQL Query](fortune500/misc/Scripts/schema.sql)_ for schema creation.
 
-  _[MetaData](fortune500/static/img/meta.png) 
+  _[MetaData](fortune500/static/img/meta.png)_ 
 
   ### Charts/Visualization
 
