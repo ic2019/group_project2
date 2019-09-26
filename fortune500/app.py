@@ -53,10 +53,6 @@ def timeseries():
     except exc.NoResultFound:
       abort(404)
 
-@app.route("/gauge")
-def gauge():
-	"""Calculate industry wise profit margin"""
-
 @app.route("/pie")
 def pie():
    #Return sector analysis by revenue and profit
@@ -99,7 +95,7 @@ def map():
 @app.route("/api/fortune500")
 def sampleData():
    try:
-      results = Fortune500.query.all()
+      results = Fortune500.query.first()
       sampleData = [{
          "Rank" : results.Rank,
          "Title": results.Title,
