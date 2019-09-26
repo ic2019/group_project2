@@ -43,7 +43,7 @@ In this project, we have created a web application using Flask, Python, PostgreS
 
   **PostgreSQL tables created**
 
-  _[SQL Schema](fortune500/misc/Scripts/schema.sql) for schema creation.
+  _[SQL Schema](fortune500/misc/Scripts/schema.sql)_ for schema creation.
 
   ### Charts/Visualization
 
@@ -80,6 +80,18 @@ In this project, we have created a web application using Flask, Python, PostgreS
   [Quandl](https://www.quandl.com/)
 
   [DataPub](https://datahub.io/core/s-and-p-500-companies)
+
+  ### How to use this app.
+
+  1. Clone this repo.
+
+  2. Change to project folder _cd group2_project_
+
+  2. Update _\config.py_  with your Quandl API key and postgres local username and password.
+
+  3. Update _fortune500\static\js\config.js_ with your Quandl API key and Mapbox API Key.
+
+  4. Run _python fortune500\app.py_
  
 
   
