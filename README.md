@@ -45,6 +45,10 @@ In this project, we have created a web application using Flask, Python, PostgreS
 
   _[SQL Schema](fortune500/misc/Scripts/schema.sql)_ for schema creation.
 
+  ### Logical Diagram
+
+  ![logdia](fortune500/static/img/logical.png)
+
   ### Charts/Visualization
 
   **Languages/Libraries used**
