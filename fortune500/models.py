@@ -25,6 +25,13 @@ class Fortune500(db.Model):
 	Mkt_Value = db.Column(db.Float)
 	Symbol = db.Column(db.String(10))
 
+	def __init__(lat, lng):
+		self.Latitude = lat
+		self.Longitude = lng
+	
+	def __repr__(self):
+		return "Lat %s Lng %s>" % (self.Latitude, self.Longitude)
+
 class Sector_Industry(db.Model):
     __tablename__ = 'sector_industry'
 

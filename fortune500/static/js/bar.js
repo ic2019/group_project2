@@ -32,7 +32,12 @@ function buildbarPlot() {
           display: true,
           text: 'Revenues, Profits Analysis - Top 10 Fortune500'
         },
-        legend: { display: true },
+        legend: { display: true ,
+                  labels: {
+                    fontColor: "black",
+                    fontSize: 18
+                  }
+                  },
         tooltips: {
           callbacks: {
             label: function(tooltipItem, data) {
@@ -75,7 +80,12 @@ function buildbarPlot_pr() {
           }
         ]
       },
-      legend: { display: true },
+      legend: { display: true,
+        labels: {
+          fontColor: "black",
+          fontSize: 18
+        }
+      },
         tooltips: {
           callbacks: {
             label: function(tooltipItem, data) {

@@ -29,8 +29,11 @@ db = SQLAlchemy(app)
 
 @app.before_first_request
 def setup():
-	# etl.init()
-   print("Data processing temporarily suspended")
+   try:
+      etl.init()
+      print("Data has been successfully written to the database!")
+   except Exception as e:
+      print("Data loading failed! ,Please check.")
 
 @app.route("/")
 def index():
@@ -88,6 +91,10 @@ def bar():
 def bar_pe():
     return render_template('bar_pe.html')
 
+@app.route('/map')
+def map():
+   return render_template('map.html')
+
 
 @app.route("/api/fortune500")
 def sampleData():
@@ -128,7 +135,7 @@ def barData():
      revenue  = [result[1] for result in results]
      profit   = [result[2] for result in results]
      emp_cnt  = [result[3] for result in results]
-     profitmgn   = [(result[2]/result[1]) for result in results]
+     profitmgn   = [(result[2]/result[1] * 100) for result in results]
      revenue_pe  = [(result[1]/result[3]) for result in results]
      profit_pe  = [(result[2]/result[3]) for result in results]
      # Generate the plot trace
@@ -150,11 +157,13 @@ def mapData():
    try:
       results = db.session.query(Fortune500.Symbol,Fortune500.Revenues, Fortune500.Profits,\
                Fortune500.Employees, Fortune500.Latitude, Fortune500.Longitude,\
-                  Fortune500.Rank,Fortune500.Title,Fortune500.Sector).all()
+                  Fortune500.Rank,Fortune500.Title,Fortune500.Sector).\
+                     all()
       mapData = pd.DataFrame(results, columns=['ticks', 'revenue', 'profit', 'emp_cnt', 'lat', 'long','rank','comp','sector'])
       mapData['revenue_pe'] = mapData['revenue'] / mapData['emp_cnt']
       mapData['profit_pe'] = mapData['profit'] / mapData['emp_cnt']
-      mapData.column =  ['ticks', 'revenue', 'profit', 'revenue_pe', 'profit_pe' ,'emp_cnt', 'lat', 'long','rank','comp','sector']
+      mapData['profit_mg'] = mapData['profit'] / mapData['revenue'] * 100
+      mapData.column =  ['ticks', 'revenue', 'profit', 'revenue_pe', 'profit_pe' ,'emp_cnt', 'lat', 'long','rank','comp','sector', 'profit_mg']
       return jsonify(mapData.to_dict(orient="records"))
    except exc.NoResultFound:
       abort(404)

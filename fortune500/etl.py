@@ -20,10 +20,10 @@ warnings.filterwarnings('ignore')
 def init():
 
 # Reading the fortune1000 data into a Pandas dataframe
-    original_fortune_data = pd.read_csv("../DataSets/fortune1000-final.csv", encoding = "ISO-8859-1")
+    original_fortune_data = pd.read_csv("db/fortune1000-final.csv", encoding = "ISO-8859-1")
 
     # reading the S & P data
-    s_and_p_data = pd.read_csv("../DataSets/constituents_csv.csv", encoding = "ISO-8859-1")
+    s_and_p_data = pd.read_csv("db/constituents_csv.csv", encoding = "ISO-8859-1")
     s_and_p_data = s_and_p_data[["Symbol", "Name"]][:500]
 
     # As previous rank is not an import column for our analysis, dropping that column

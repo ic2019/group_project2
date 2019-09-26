@@ -55,7 +55,8 @@ function init() {
         t: 0,
         l: 0 ,
        height: 600,
-      width: 800}
+      width: 800},
+      showlegend: false
       
     };
       Plotly.plot("pie", trace1, layout);
@@ -87,7 +88,8 @@ function init() {
           t: 0,
           l: 0 ,
          height: 600,
-        width: 800} 
+        width: 800} ,
+        showlegend: false
       }; 
       
       Plotly.plot("pie_pp", trace2, layout);

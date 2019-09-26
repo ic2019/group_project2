@@ -8,7 +8,7 @@
                                 <!-- <h5>Select the sector</h5> -->
                                  <div class="container">
                                     <div class="row">
-                                            <div class="col-md-12">
+                                            <div class="col-md-8">
                                                 <p>Select the sector</p>
                                                 <select required multiple id="selDataset1">
                                                     {% for value in data.Sector | unique %}                                               
@@ -19,8 +19,11 @@
                                             
                                                 
                                             </div>
-                                    
-​
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-3">
+                                    <br><br><br>
+                                    <button type="button" class="btn btn-primary" onclick="window.location.reload();">Reset</button>
+                                     </div>
                                     </div>
                                     
                  <!--  -->
@@ -37,13 +40,13 @@
                                     
                                     <!-- <h5>Sector Revenue Analysis</h5>-->
                                     <div class="col-md-6 bg-light">
-                                        <p>Sector Revenue Analysis</p> 
+                                        <p><strong>Sector Revenue Analysis</strong></p> 
                                         <div id="pie" width="800" height="600"></div>
                                     </div>
                         
                                    <!-- <h5>Sector Profit Analysis</h5>-->
                                     <div class="col-md-6 bg-light">
-                                        <p>Sector Profit Analysis</p>    
+                                        <p><strong>Sector Profit Analysis</strong></p>    
                                         <div id="pie_pp" width="800" height="600"></div>
                                     </div>
                         </div>

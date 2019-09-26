@@ -1,45 +1,110 @@
-# group_project2
 ## Data Visualization project.
 
-### Fortune 500 Financial Analysis
-**Team**
- -	Cletus
- -      Jake
- -	Indu
- -	Mythili
- -	Satheesh
+## US Fortune 500 Financial Data Analysis.
 
-**Datasets**
+![cover](fortune500/static/img/cover.png)
 
 [Kaggle](https://www.kaggle.com/Eruditepanda/fortune-1000-2018)
 [Quandl](https://www.quandl.com/)
 [DataPub](https://datahub.io/core/s-and-p-500-companies)
 
-An investor with 1M$ would like to know, in which company he should invest for getting the maximum returns. In this project, we would analyze the financial data of Fortune 500 companies to assist the investor in making the correct choice by doing following analysis.
+## Background
 
-  - Correlation between Revenue Vs Profit
-  - Findinging the profit margin (  Profit / Revenue) per company
-  - Finding profit margin per Sector/Industry
-  - High worker productivity ( Revenue per employee)
+In this project, we have created a web application using Flask, Python, PostgreSQL  and different JavaScript libraries to render various visualizations and charts that would allow individuals visiting our website the opportunity to analyze US Fortune 500 companies, their stock price, and the financials associated with them. We hope that our website arms potential investors with the data they need to make financial investment decisions.
 
-**Objective**
+#### Following analysis are done.
 
- 1.	Are companies making bigger revenue makes bigger profits
- 2.	Sector Analysis (top 500 companies)
- 3.	Stocks Analysis (top 5 companies)
- 4.	US Map to plot revenue/profit analysis
+  - Are companies making bigger revenue makes bigger profits? Correlation between Revenue Vs Profit and Profit Margin (Top 10 Fortune 500)
+  - Correlation between Per employee Revenue and Profit. ((Top 10 Fortune 500))
+  - Findinging the profit margin (  Profit / Revenue). (Top 10 Fortune 500)
+  - Percentage of revenue and profit of each industry per sector.
+  - Stock trend /correlation analysis.
+  - Using map to represent all Fortune 500 companies and their key financial data.
 
-**Coding Notes**
+  ## Tasks
+  ### Extract / Transform / Load
 
- 1.	Are companies making bigger revenue makes bigger profits
-    a.	Identify top 10 Companies based on the ranking of the dataset and plot a bar chart
- 2.	Sector Analysis (top 500 companies)
-    a.	Let user pick the sector from a drop down
-    b.	Aggregate data by sector
-    c.	Plot a Pie chart to identify top performing sectors in terms of Revenue/Profit
- 3.	Stocks Analysis (top 5 companies)
-    a.	Identify top 5 companies, get the tickers symbol for those companies and loop through each company to get stocks data for each company and plot a time series line chart
- 4.	US Map to plot revenue/profit analysis
+  #### Extract
+  
+  We have used Fortune 1000 dataset from [Kaggle](https://www.kaggle.com/Eruditepanda/fortune-1000-2018) to perform the analysis.
+
+  ### Transform
+
+  We decided to extract first 500 records only based on ranking and then using S&P dataset from [DataPub](https://datahub.io/core/s-and-p-500-companies), updated the dataset with stock ticker info so that stock analysis can also be performed. Also performed cleaning and transforming like removing null values, converting string objects to float objects etc..
+
+  Also created an new table for storing the aggregated data of revenue and profit percentages per sector for all industries.
+
+  **Original Data Schema**
+   
+  ![original_schema](fortune500/static/img/original_schema.png)
+
+  **New Data Schema**
+  
+  
+  ![new_schema](fortune500/static/img/new_schema.png)
+
+  ### Load
+
+  **PostgreSQL tables created**
+
+  _[SQL Query](fortune500/misc/Scripts/schema.sql) for schema creation.
+
+  _[MetaData](fortune500/static/img/meta.png) 
+
+  ### Charts/Visualization
+
+  **Languages/Libraries used**
+
+  _Flask, Python, JavaScript, D3.js, Plotly, Chart.js, JQuery_
+
+  1. Revenue / Profit Analysis ( Top 10 Fortune 500 Companies)
+
+  ![bar](fortune500/static/img/bar.gif)
+
+  ![bar_pm](fortune500/static/img/bar_pm.gif)
+
+  2. Revenue / Profit Analysis Per employee ( Top 10 Fortune 500 Companies)
+
+  ![bar_pe](fortune500/static/img/bar_pe.gif)
+
+  3. Sector Analysis
+
+  ![sector](fortune500/static/img/sector.gif)
+
+  4. Stock Trend Analysis
+
+  ![stock](fortune500/static/img/stock.gif)
+
+  5. Map of US with all Fortune 500 companies and their financial data.
+
+  ![map](fortune500/static/img/map.gif)
+
+  
+
+  
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
 
 
 

@@ -5,7 +5,7 @@
 <div class=" container jumbotron">
     <div class="container row border border-success">
       <div class="col img-responsive">
-        <h1>Welcome investors, let's have "A Peek into US Fortune 500 Financial Data".</h1>
+        <h2>Welcome investors, let's have "A Peek into US Fortune 500 Financial Data".</h2>
         <hr>
         <img class="img-fluid float-left" src="/static/img/Fig1.jpg" width="250" height="250">
         <br>
@@ -23,35 +23,43 @@
         <br>
       </div>
       <div class="col img-responsive">
-          <h1>Analysis</h1>
+          <h2>Analysis</h2>
 <!-- beginning of carousal -->
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-              <img src="{{ url_for('static', filename='img/bar.png') }}" class="d-block w-100" alt="...">
+              <img src="{{ url_for('static', filename='img/bar.gif') }}" class="d-block w-100" alt="...">
               <h5>Top 10 - Revenue and Profit</h5>
             <p>This chart shows us the revenue and the profit of the top 10 in the Fortune 500 Companies. This is a bar chart that shows revenue and profit side by side to show investors how the top 10 companies stack up versus each other.</p>
           </div>
-          
           <div class="carousel-item">
-            <img src="/static/img/bar_pe.png" class="d-block w-100" alt="...">
-            <h5>Second slide label</h5>
+              <img src="{{ url_for('static', filename='img/bar_pm.gif') }}" class="d-block w-100" alt="...">
+              <h5>Top 10 - Profitability Margin</h5>
+              <p>This chart shows us the profitability margin the top 10 companies in the Fortune 500 Companies.</p>
+          </div>
+          <div class="carousel-item">
+            <img src="/static/img/bar_pe.gif" class="d-block w-100" alt="...">
+            <h5>Top 10 - Per Employee Revenue and Profit</h5>
             <p>This chart shows the profit per employee of the top 10 in the Fortune 500 companies. This chart allows investors to drill down into the worker productivity of the top 10 companies of the Fortune 500.</p>
           </div>
           <div class="carousel-item">
-            <img src="/static/img/timesrs.png" class="d-block w-100" alt="...">
-            <h5>Sector Analysis</h5>
+            <img src="/static/img/stock.gif" class="d-block w-100" alt="...">
+            <h5>Time Series Stock Analysis</h5>
             <p>This pie chart allows investors to look at different sectors of the Fortune 500. The sectors that can be chosen consist of the industries in the Fortune 500. This means that investors that have a heavy interest in certain types of industries can drill down into that data.</p>
           </div>
           <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
-                <h5>Third slide label</h5>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                <img src="/static/img/sector.gif" class="d-block w-100" alt="...">
+                <h5>Sector Analysis</h5>
+            <p>This pie chart allows investors to look at different sectors of the Fortune 500. The sectors that can be chosen consist of the industries in the Fortune 500. This means that investors that have a heavy interest in certain types of industries can drill down into that data.</p>
           </div>
           <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
-                    <h5>Third slide label</h5>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                    <img src="/static/img/map.gif" class="d-block w-100" alt="...">
+                    <h5>Map of Fortune 500 companies</h5>
+            <p>This is a map of the Fortune 500 companies. This map shows all of the Fortune 500 companies. The map shows where the Fortune 500 companies are located. On this map when an investor is looking to drill down into a certain Fortune 500 company, a pop up will show with the Fortune 500 Rank, company revenue and employee count etc.</p>
+          </div>
+          <div class="carousel-item">
+              <img src="/static/img/team.jpg" class="d-block w-100" alt="...">
+              <h5>Team who made this!</h5>
           </div>
         </div>
 </div>
@@ -59,16 +67,11 @@
   <!-- end of carousal   -->
 </div>
 </div>
-<p class="card-text text-dark"><marquee direction="left">Fortune 500 companies represent two-thirds of the U.S. GDP with $13.7 trillion in revenues, $1.1 trillion in profits, $22.6 trillion in market value, and employ 28.7 million people worldwide. ( Read More...)</marquee></p>
+<p class="card-text text-dark"><marquee direction="left">Fortune 500 companies represent two-thirds of the U.S. GDP with $13.7 trillion in revenues, $1.1 trillion in profits, $22.6 trillion in market value, and employ 28.7 million people worldwide.<a href="https://fortune.com/fortune500/"><button type="button" class="btn btn-primary btn-sm">(Read More..)</button></a></marquee></p>
 </div>
-
-        <!-- Bootstrap CSS -->
-<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" -->
-<!-- integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 
 <!-- Styles -->
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap" rel="stylesheet">
 
 {% endblock %}
