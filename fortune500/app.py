@@ -26,7 +26,7 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
 
-
+# ETL process of data cleaning and writing to postgres SB
 @app.before_first_request
 def setup():
    try:
@@ -35,12 +35,14 @@ def setup():
    except Exception as e:
       print("Data loading failed! ,Please check.")
 
+# Rendering the home page
 @app.route("/")
 def index():
     """Return the homepage"""
     print(f"Data Loaded to the database!")
     return render_template('index.html')
 
+# Rendering stock analysis page
 @app.route("/timesrs")
 def timeseries():
     """Return fortune500 companies tick symbols for Time Series chart"""
@@ -53,6 +55,7 @@ def timeseries():
     except exc.NoResultFound:
       abort(404)
 
+# Rendering page for sector analysis
 @app.route("/pie")
 def pie():
    #Return sector analysis by revenue and profit
@@ -79,19 +82,22 @@ def pie():
    except exc.NoResultFound:
         abort(404)
 
+# Rendering page for Revenue and Profit analysis
 @app.route('/bar')
 def bar():
     return render_template('bar.html')
 
+# Rendering page for revenue and profit per employee page
 @app.route('/bar_pe')
 def bar_pe():
     return render_template('bar_pe.html')
 
+# Rendering page for map
 @app.route('/map')
 def map():
    return render_template('map.html')
 
-
+# API endpoint for a sample fortune 500 data record
 @app.route("/api/fortune500")
 def sampleData():
    try:
@@ -121,6 +127,7 @@ def sampleData():
    except exc.NoResultFound:
       abort(404)
 
+# API endoint for all Revenue and Profit analysis
 @app.route("/api/bar")
 def barData():
   try:
@@ -148,6 +155,7 @@ def barData():
   except exc.NoResultFound:
      abort(404)
 
+# API endpoint for map data
 @app.route("/api/map")
 def mapData():
    try:
@@ -164,6 +172,7 @@ def mapData():
    except exc.NoResultFound:
       abort(404)
 
+# API endpoint for sector analysis
 @app.route("/api/pie")
 def pieData():
    try:
@@ -172,7 +181,8 @@ def pieData():
       return jsonify(pieData.to_dict(orient="records"))
    except exc.NoResultFound:
       abort(404)
-      
+
+# API endpoint for Stock analysis     
 @app.route("/api/timesrs")
 def timeData():
    try:
@@ -186,19 +196,7 @@ def timeData():
    except:
       abort(404)
 
-@app.route("/meta")
-def metData():
-   try:
-       return render_template("meta.html")
-   except:
-      abort(404)
-@app.route("/logdia")
-def logDia():
-   try:
-      return render_template("logdia.html")
-   except:
-      abort(404)
-   
+ 
 @app.errorhandler(404)
 def page_not_found(error):
 	return render_template('404.html'), 404  

@@ -1,6 +1,10 @@
 from flask_sqlalchemy import SQLAlchemy
 
+# Initializing the database object
+
 db = SQLAlchemy()
+
+# Class for fortune500 table
 
 class Fortune500(db.Model):
 	__tablename__ = 'fortune500'
@@ -32,6 +36,7 @@ class Fortune500(db.Model):
 	def __repr__(self):
 		return "Lat %s Lng %s>" % (self.Latitude, self.Longitude)
 
+# Class for Sector_Industry table
 class Sector_Industry(db.Model):
     __tablename__ = 'sector_industry'
 

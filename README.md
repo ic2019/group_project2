@@ -49,6 +49,8 @@ In this project, we have created a web application using Flask, Python, PostgreS
 
   ![logdia](fortune500/static/img/logical.png)
 
+  All the etl process has been added to [etl.py](fortune500/etl.py) and this script will be called in app.py under _before_first_request_ route so that data is written to the database before any web page is rendered.
+
   ### Charts/Visualization
 
   **Languages/Libraries used**
