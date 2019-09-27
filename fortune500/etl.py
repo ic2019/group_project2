@@ -35,9 +35,13 @@ def init():
 
     #extracting top 500 rank companies
     original_fortune_data = original_fortune_data[original_fortune_data["rank"] < 501]
+    
+    # Initializing columns that needs to be converted from string to float
 
     cols_to_be_changed = ["Revenues ($M)","Revenue Change", "Profits ($M)","Profit Change", "Assets ($M)","Mkt Value as of 3/29/18 ($M)"]
     new_cols = ["Revenues($M)","Revenue_Change", "Profits($M)","Profit_Change", "Assets($M)","Mkt_Value_as_of_3/29/18_($M)"]
+
+    # Converting string data to float for data processing
     for index,row in original_fortune_data.iterrows():
 
         for i in range(len(cols_to_be_changed)):
@@ -47,12 +51,13 @@ def init():
                 #print(row[cols_to_be_changed[i]])
                 original_fortune_data.loc[index,new_cols[i]] = 0.0
 
+    # dropping original columns
 
     for i in cols_to_be_changed:
         if i in original_fortune_data.columns:
             original_fortune_data = original_fortune_data.drop(i, axis=1) 
 
-    # Cleaning up common fields for comparing
+    # Cleaning up common fields from both fortune500 data and s&p symbol data for comparing
     original_fortune_data['title'] = original_fortune_data['title'].apply(lambda x: re.sub('[\-]','',x.lower()))
     s_and_p_data['Name'] = s_and_p_data['Name'].apply(lambda x: re.sub('[\-]','',x.lower()))
     original_fortune_data = original_fortune_data.sort_values(by=['title'])
@@ -84,7 +89,8 @@ def init():
     sector_gross_revenue_profit = fortune500_data[["Sector", "Revenues", "Profits"]].groupby(["Sector"]).sum().sort_values(by=["Sector"]).reset_index()
     agg_sector["Profit_Margin"] = agg_sector["Profits"] / agg_sector["Revenues"]
 
-    # Viewing the final agg data
+    # Calculating Revenue percent and Profit percent
+    
     for i, row in sector_gross_revenue_profit.iterrows():
        gross_revenue = row["Revenues"]
        gross_profit = row["Profits"]
