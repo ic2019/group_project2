@@ -51,6 +51,10 @@ In this project, we have created a web application using Flask, Python, PostgreS
 
   All the etl process has been added to [etl.py](fortune500/etl.py) and this script will be called in app.py under _before_first_request_ route so that data is written to the database before any web page is rendered.
 
+  ### Home Page
+
+  ![home](fortune500/static/img/home.png)
+
   ### Charts/Visualization
 
   **Languages/Libraries used**
@@ -95,13 +99,13 @@ In this project, we have created a web application using Flask, Python, PostgreS
 
   3. Create a local postgresql database named _fortune500_db_ and run [SQL Schema](fortune500/misc/Scripts/schema.sql) to create a schema for this project.
 
-  4. Change to project folder _cd group2_project_
+  4. Change to project folder _cd group2_project\fortune500_
 
-  6. Update _fortune500\config.py_  with your Quandl API key and postgres local username and password.
+  6. Update _config.py_  with your Quandl API key and postgres local username and password.
 
-  7. Update _fortune500\static\js\config.js_ with your Quandl API key and Mapbox API Key.
+  7. Update _static\js\config.js_ with your Quandl API key and Mapbox API Key.
 
-  8. Run _python fortune500\app.py_
+  8. Run _python app.py_
  
 
   
