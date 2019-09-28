@@ -30,17 +30,21 @@ db = SQLAlchemy(app)
 @app.before_first_request
 def setup():
    try:
+      print("Data Loading started.. Please be patient!!")
       etl.init()
       print("Data has been successfully written to the database!")
    except Exception as e:
-      print("Data loading failed! ,Please check.")
+      print("Data loading failed! ,Please check the console logs.")
 
 # Rendering the home page
 @app.route("/")
 def index():
-    """Return the homepage"""
-    print(f"Data Loaded to the database!")
-    return render_template('index.html')
+   """Return the homepage"""
+   try:
+       print(f"Data Loaded to the database!")
+       return render_template('index.html')
+   except:
+      abort(404)
 
 # Rendering stock analysis page
 @app.route("/timesrs")

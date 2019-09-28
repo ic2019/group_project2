@@ -13,19 +13,24 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 from sqlalchemy import func
 from config import SQLALCHEMY_DATABASE_URI
-#DATABSE_URI=SQLALCHEMY_DATABASE_URI
+import os
+from pathlib import Path
 
 # from config import passwd
 warnings.filterwarnings('ignore')
 def init():
 
 # Reading the fortune1000 data into a Pandas dataframe
-    original_fortune_data = pd.read_csv("db/fortune1000-final.csv", encoding = "ISO-8859-1")
+    try:
+       fortune500_file_path = Path('./db') / 'fortune1000-final.csv'
+       original_fortune_data = pd.read_csv(fortune500_file_path, encoding = "ISO-8859-1")
 
-    # reading the S & P data
-    s_and_p_data = pd.read_csv("db/constituents_csv.csv", encoding = "ISO-8859-1")
-    s_and_p_data = s_and_p_data[["Symbol", "Name"]][:500]
-
+       # reading the S & P data
+       s_p_file_path = Path('./db') / 'constituents_csv.csv'
+       s_and_p_data = pd.read_csv(s_p_file_path, encoding = "ISO-8859-1")
+       s_and_p_data = s_and_p_data[["Symbol", "Name"]][:500]
+    except Exception as e:
+        print(f"Error reading CSV {e}")
     # As previous rank is not an import column for our analysis, dropping that column
     original_fortune_data = original_fortune_data.drop('Previous Rank', axis=1)
     original_fortune_data['City'] = original_fortune_data['City'].replace(np.nan, 'New York', regex=True)
@@ -100,7 +105,6 @@ def init():
        agg_sector.loc[mask, "Profit_Percent"] = agg_sector.loc[mask, "Profits"].apply(lambda x: round(x / gross_profit * 100,2))
 
     # Connecting to postgreSQL database
-    #DATABASE_URI = f"postgresql://postgres:{passwd}@localhost:5432/fortune500_db"
 
     engine = create_engine(SQLALCHEMY_DATABASE_URI)
 
